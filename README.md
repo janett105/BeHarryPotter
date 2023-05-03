@@ -1,6 +1,6 @@
 # BeHarryPotter
 
-## Voice Command
+## Voice Command(박지후)
 Oculus voice SDK with Wit.ai
 
 ### 구현 기능
