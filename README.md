@@ -12,6 +12,7 @@ Oculus voice SDK with Wit.ai
 인센디오 -
 폭발 -
 3. 마법 주문 통과/불통과 
+
 https://learn.microsoft.com/ko-kr/windows/mixed-reality/develop/unity/voice-input-in-unity
 https://developer.oculus.com/documentation/unity/voice-sdk-overview/
 
