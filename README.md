@@ -15,6 +15,7 @@ Oculus voice SDK with Wit.ai
 
 https://learn.microsoft.com/ko-kr/windows/mixed-reality/develop/unity/voice-input-in-unity
 https://developer.oculus.com/documentation/unity/voice-sdk-overview/
+https://github.com/wit-ai/wit-unity
 
 https://www.youtube.com/watch?v=SJ96P-ZhBoc&themeRefresh=1
 https://www.youtube.com/watch?v=dzD0qP8viLw
