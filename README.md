@@ -1,9 +1,9 @@
 # BeHarryPotter
 
-##Voice Command
+## Voice Command
 Oculus voice SDK with Wit.ai
 
-###구현 기능
+### 구현 기능
 1. event(지팡이button click) 유무에 따른 음성 인식 시작/종료
 2. 마법 주문 설정
 윙가르디움 레비오사 - 띄우기 
