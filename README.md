@@ -14,12 +14,19 @@ Oculus voice SDK with Wit.ai
 3. 마법 주문 통과/불통과 
 
 https://learn.microsoft.com/ko-kr/windows/mixed-reality/develop/unity/voice-input-in-unity
+
 https://developer.oculus.com/documentation/unity/voice-sdk-overview/
+
 https://github.com/wit-ai/wit-unity
 
 https://www.youtube.com/watch?v=SJ96P-ZhBoc&themeRefresh=1
+
 https://www.youtube.com/watch?v=dzD0qP8viLw
+
 https://www.youtube.com/watch?v=mUzY2afvPoA
+
 https://www.youtube.com/watch?v=29vyEOgsW8s
+
 https://medium.com/picovoice/tutorial-making-a-hands-free-video-player-in-unity-68e5f43b6fff
+
 https://blog.unity.com/technology/speech-recognition-and-vr
