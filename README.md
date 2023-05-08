@@ -12,7 +12,9 @@ https://wit.ai/apps/184718221171935/understanding
 3. Wit.ai 마법 주문 training
 
 Wingardium Leviosa - levitate(띄우기) 
+
 스튜티파이 - 찌르기 
+
 Incendio - flame(화염 방사)
 
 4. 마법 주문 통과 시 함수 전달
