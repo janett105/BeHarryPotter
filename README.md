@@ -19,7 +19,7 @@ Incendio - flame(화염 방사)
 
 4. 마법 주문 통과 시 함수 전달
 
-##참고 자료
+## 참고 자료
 https://developer.oculus.com/documentation/unity/voice-sdk-overview/
 
 https://github.com/wit-ai/wit-unity
