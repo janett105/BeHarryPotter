@@ -11,6 +11,7 @@ https://wit.ai/apps/184718221171935/understanding
 2. 음성 인식 상태에 따른 VisualFeedback 
 
   시작, 종료, 처리 중, 버튼 안 누르고 있을 때, 에러 
+  
 3. Wit.ai 마법 주문 training
 
   * Wingardium Leviosa - levitate(띄우기) 
