@@ -14,7 +14,7 @@ https://wit.ai/apps/184718221171935/understanding
   * Wingardium Leviosa - levitate(띄우기) 
   * 스튜티파이 - 찌르기 
   * Incendio - flame(화염 방사)
-4. **Response Handler** : 음성인식 결과가 training한 값에 있다면 value에 저장, Magic Handler에 value 전달   
+4. **Response Handler** : 음성인식 결과(intent)가 training한 값에 있다면 value에 저장, Magic Handler에 value 전달   
 4. **Magic Handler(script)** : 음성인식 결과(intent)와 모션인식 결과(?)가 정답과 일치한다면 마법 실행
 
 ### 참고 자료
