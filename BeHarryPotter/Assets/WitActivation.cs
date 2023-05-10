@@ -15,12 +15,4 @@ public class WitActivation : MonoBehaviour
             wit.Activate();
         }
     }
-
-    public void TriggerPressed()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))    //space bar´©¸£¸é,
-        {
-            wit.Activate();
-        }
-    }
 }

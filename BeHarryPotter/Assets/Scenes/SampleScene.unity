@@ -323,7 +323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &707978573
 Transform:
   m_ObjectHideFlags: 0
@@ -438,7 +438,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: Press the button on the wand to activate
+            m_StringArgument: Press the button on the wand to activatend to activate
             m_BoolArgument: 0
           m_CallState: 2
     OnPartialResponse:
@@ -608,7 +608,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -781,7 +781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1150182094
 Transform:
   m_ObjectHideFlags: 0
@@ -825,13 +825,14 @@ GameObject:
   - component: {fileID: 1216989378}
   - component: {fileID: 1216989377}
   - component: {fileID: 1216989376}
+  - component: {fileID: 1216989380}
   m_Layer: 0
-  m_Name: wand
+  m_Name: Wand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!136 &1216989376
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -904,13 +905,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216989375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -1.8761282, z: -2.34}
+  m_LocalPosition: {x: 0.72, y: 2.38, z: 2.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1216989380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216989375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023291ba579d5e34baad3b9b7738675b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1265694099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2014594839
 Transform:
   m_ObjectHideFlags: 0
@@ -1568,4 +1581,16 @@ MonoBehaviour:
   formattedValueEvents: []
   onMultiValueEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1216989380}
+        m_TargetAssemblyTypeName: MagicHandler, Assembly-CSharp
+        m_MethodName: MagicCheck
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
