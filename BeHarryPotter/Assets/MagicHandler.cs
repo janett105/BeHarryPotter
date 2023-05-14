@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MagicHandler : MonoBehaviour
-{   
+{
     //음성인식+모션 둘 다 일치 시 마법
     //vlaues : Wit에서 음성 인식 성공 시, intent 값 받아옴
     public void MagicCheck(string[] values) 
@@ -14,6 +14,10 @@ public class MagicHandler : MonoBehaviour
         if (values[0] == "levitate") { Levitate(); };
     }
 
-    void Flame(){ }
-    void Levitate() { }
+    void Flame(){
+
+        }
+    void Levitate() {
+
+    }
 }
