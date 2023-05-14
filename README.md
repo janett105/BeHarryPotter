@@ -37,6 +37,8 @@ https://developer.bhaptics.com/application/S7To1fRZxc79JUkIQoPn
 ### 참고 자료
 https://bhaptics.notion.site/Plug-in-deployed-events-to-Unity-33cc33dcfa44426899a3f21c62adf66d
 
+https://github.com/bhaptics/haptic-guide
+
 ## 오류
 warning: LF will be replaced by CRLF in bora.txt.
 The file will have its original line endings in your working directory
