@@ -30,7 +30,6 @@ https://www.youtube.com/watch?v=SJ96P-ZhBoc&themeRefresh=1
 ## 오류
 warning: LF will be replaced by CRLF in bora.txt.
 The file will have its original line endings in your working directory
-
-'''
+```
 git config --global core.autocrlf true
-'''
+```
