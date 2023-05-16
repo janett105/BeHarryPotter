@@ -340,6 +340,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/AssistantCoreSDKEditor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/AssistantCoreSDKRuntime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Bhaptics.SDK2.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Bhaptics.SDK2.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Facebook.Wit.Dictation.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Facebook.Wit.Dictation.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Meta.VoiceSDK.Mic.Common.ref.dll"
