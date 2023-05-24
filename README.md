@@ -44,3 +44,11 @@ The file will have its original line endings in your working directory
 ```
 git config --global core.autocrlf true
 ```
+
+## Magic Wand 3D printing
+3D printing model
+https://www.thingiverse.com/thing:1069671
+
+## Thermal Haptics - Arm Sleeve(채윤지) 
+ardunity
+
