@@ -51,3 +51,8 @@ The file will have its original line endings in your working directory
 ```
 git config --global core.autocrlf true
 ```
+
+### BeHarryPotter Game (Unity3D) 
+with Oculus Quest 2
+
+해리 포터의 전투 장면을 실제 VR 게임으로 구현
