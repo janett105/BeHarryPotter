@@ -40,7 +40,7 @@ https://github.com/bhaptics/haptic-guide
 
 ## Magic Wand 3D printing
 3D printing model
-
+use z-suite software
 https://www.thingiverse.com/thing:1069671
 
 ## Thermal Haptics - Arm Sleeve(채윤지) 
