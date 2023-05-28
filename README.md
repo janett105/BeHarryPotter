@@ -40,10 +40,14 @@ https://github.com/bhaptics/haptic-guide
 
 ## Magic Wand 3D printing
 3D printing model
+
 https://www.thingiverse.com/thing:1069671
 
 ## Thermal Haptics - Arm Sleeve(채윤지) 
 ardunity
+arduino and l298n with peltier
+make peltier hot and cold when user didn't defend attack
+https://deneb21.tistory.com/281
 
 ## 오류
 warning: LF will be replaced by CRLF in bora.txt.
