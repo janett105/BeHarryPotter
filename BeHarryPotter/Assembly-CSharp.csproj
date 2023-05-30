@@ -194,6 +194,8 @@
     <Compile Include="Assets\Oculus\SampleFramework\Usage\SpatialAnchor\Scripts\AnchorUIManager.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\Passthrough\Scripts\SelectivePassthroughExperience.cs" />
     <Compile Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Scripts\TrackSegment.cs" />
+    <Compile Include="Assets\Scripts\LivingEntity.cs" />
+    <Compile Include="Assets\Scripts\EnemyDefault.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />

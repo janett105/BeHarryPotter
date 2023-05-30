@@ -533,6 +533,8 @@
 "Assets/Oculus/Voice/Lib/Wit.ai/AssemblyInfo.cs"
 "Assets/Scripts/AttackedHandler.cs"
 "Assets/Scripts/ColorChanger.cs"
+"Assets/Scripts/EnemyDefault.cs"
+"Assets/Scripts/LivingEntity.cs"
 "Assets/Scripts/MagicHandler.cs"
 "Assets/Scripts/WitActivation.cs"
 -langversion:9.0
