@@ -51,3 +51,14 @@ The file will have its original line endings in your working directory
 ```
 git config --global core.autocrlf true
 ```
+
+## BeHarryPotter Game (Unity3D) (이은화)
+with Oculus Quest 2
+
+VR로 마법 전투 게임을 구현하였다. 
+
+적은 플레이어를 추적한 후 공격 반경에 들어오면 적을 마법으로 공격한다. 
+
+일반 공격과 불 공격이 있다. 
+
+플레이어는 마법으로 적을 무찌를 수 있도록 개발하였다. 
