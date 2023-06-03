@@ -25,6 +25,8 @@ https://github.com/wit-ai/wit-unity
 
 https://www.youtube.com/watch?v=SJ96P-ZhBoc&themeRefresh=1
 
+![image](https://github.com/ImmersiveContentsTeam1/BeHarryPotter/assets/81574359/ea1daac2-dd64-427c-a56d-8d866db5094e)
+
 ## Bhaptics(박지후)
 Tactsuit X40
 
