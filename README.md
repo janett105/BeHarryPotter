@@ -64,3 +64,5 @@ VR로 마법 전투 게임을 구현하였다.
 일반 공격과 불 공격이 있다. 
 
 플레이어는 마법으로 적을 무찌를 수 있도록 개발하였다. 
+
+https://answers.unity.com/questions/785746/anyway-to-tell-which-side-of-a-collider-is-hit.html
