@@ -20,48 +20,20 @@ MonoBehaviour:
     isPrivate: 0
     createdAt: 2023-05-03T01:13:08-0700
     trainingStatus: 1
-    lastTrainDuration: 68
-    lastTrainedAt: 2023-05-03T09:27:41-0700
-    nextTrainAt: 2023-05-03T09:26:33-0700
+    lastTrainDuration: 25
+    lastTrainedAt: 2023-05-23T23:29:04-0700
+    nextTrainAt: 2023-05-23T23:28:39-0700
     intents:
-    - id: 1640782139769307
-      name: change_color
-      entities:
-      - name: color:color
-        id: 189786980596233
-      - name: shape:shape
-        id: 251366080786213
+    - id: 193516830298129
+      name: defense
+      entities: []
     - id: 603789731680424
       name: flame
       entities: []
-    - id: 820254573043452
-      name: levitate
+    - id: 563912605851759
+      name: freeze
       entities: []
-    entities:
-    - name: color
-      id: 577352377711598
-      lookups:
-      - free-text
-      - keywords
-      roles:
-      - name: color
-        id: 189786980596233
-      keywords:
-      - keyword: green
-        synonyms:
-        - green
-    - name: shape
-      id: 603465744838033
-      lookups:
-      - free-text
-      - keywords
-      roles:
-      - name: shape
-        id: 251366080786213
-      keywords:
-      - keyword: cube
-        synonyms:
-        - cube
+    entities: []
     traits: []
     voices:
     - name: Cael
