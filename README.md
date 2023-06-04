@@ -7,9 +7,9 @@ Wit.ai
 https://wit.ai/apps/184718221171935/understanding
 
 ### 구현 기능
-1. **Wit Activation(scripit)** : event(wand button click)에 따른 음성 인식 시작/종료 (현재는 space bar)
-2. **VisualFeedback** :  Wit event(시작, 종료, 처리 중, 버튼 안 누르고 있을 때, 에러) 사용자에게 보여주는 text canvas
-3. **Wit.ai training** : 
+1. **Wit Activation(scripit)** : event(Axis1D.SecondaryHandTrigger,Unity Axis ID-12)에 따른 음성 인식 시작/종료 
+3. **VisualFeedback** :  Wit event(시작, 종료, 처리 중, 버튼 안 누르고 있을 때, 에러) 사용자에게 보여주는 text canvas
+4. **Wit.ai training** : 
 
   * Immobulus - freeze(고드름 발사)
   * protego - defense(방어by 팔토시)
@@ -24,6 +24,8 @@ https://developer.oculus.com/documentation/unity/voice-sdk-overview/
 https://github.com/wit-ai/wit-unity
 
 https://www.youtube.com/watch?v=SJ96P-ZhBoc&themeRefresh=1
+
+![image](https://github.com/ImmersiveContentsTeam1/BeHarryPotter/assets/81574359/ea1daac2-dd64-427c-a56d-8d866db5094e)
 
 ## Bhaptics(박지후)
 Tactsuit X40
@@ -62,3 +64,5 @@ VR로 마법 전투 게임을 구현하였다.
 일반 공격과 불 공격이 있다. 
 
 플레이어는 마법으로 적을 무찌를 수 있도록 개발하였다. 
+
+https://answers.unity.com/questions/785746/anyway-to-tell-which-side-of-a-collider-is-hit.html
