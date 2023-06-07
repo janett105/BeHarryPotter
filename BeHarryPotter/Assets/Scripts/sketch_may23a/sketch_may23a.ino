@@ -11,27 +11,26 @@ void setup() {
 }
 
 void loop() {
-  //if 시러얼 통신에 특정 값이 input 되면 loop 동작 시작(5초동안)-> off
+  //if 시러얼 통신에 특정 값이 input 되면 loop 동작 시작(3초동안)-> off
   if (Serial.available()>0){
     incomingData = Serial.read();
-    if (incomingData == 'Failed'){
+    if (incomingData == 'f'){
       digitalWrite(dir1,HIGH);
       digitalWrite(dir2,LOW);
       analogWrite(speed,127); 
-      delay(5000);
+      delay(3000);
+      digitalWrite(speed,0);
+    }
+    else if (incomingData == 'i'){
+      digitalWrite(dir1,LOW);
+      digitalWrite(dir2,HIGH);
+      analogWrite(speed,127); 
+      delay(3000);
       digitalWrite(speed,0);
     }
     }
   }
   
-
-  //뜨겁게 만들기 
-
-  //digitalWrite(dir1,LOW);
- // digitalWrite(dir2,HIGH);
-  //analogWrite(speed,127);
-  //delay(10000);
-  // 차갑게 만들기
 
   //digitalWrite(speed,0);
   // 정지

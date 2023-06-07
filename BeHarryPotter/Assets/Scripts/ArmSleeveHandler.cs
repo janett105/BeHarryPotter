@@ -10,16 +10,15 @@ namespace HapticsHandler
     {
         private SerialPort serialPort;
 
-        public string defenseFasilSignal = "Success";
-
         private void Start(){
             serialPort = new SerialPort("COM10", 9600);
             serialPort.Open();
         }
-        private void Update(){
-            //if //(방어 실패시){
-            //    serialPort.WriteLine(defenseFailSignal);
-            //}
+        public void firesignal (){
+            serialPort.Write("f");
+        }
+        public void icesignal(){
+            serialPort.Write("i");
         }
         private void Quit(){
             serialPort.Close();
