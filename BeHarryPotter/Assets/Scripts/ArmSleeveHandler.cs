@@ -2,30 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 using System.IO.Ports;
-using System;
 
 namespace HapticsHandler
 {
     public class ArmSleeveHandler : MonoBehaviour
     {
-        private SerialPort serialPort = new SerialPort();
+        private SerialPort serialPort;
 
-        public string defenseFasilSignal = "sucess";
+        public string defenseFasilSignal = "Success";
 
         private void Start(){
             serialPort = new SerialPort("COM10", 9600);
             serialPort.Open();
         }
-
-        private void FireSignal(){
-            serialPort.WriteLine(defenseFailSignal);
+        private void Update(){
+            //if //(방어 실패시){
+            //    serialPort.WriteLine(defenseFailSignal);
+            //}
         }
-        private void IceSignal(){
-            serialPort.WriteLine(defenseFailSignal);
-        }
-
         private void Quit(){
             serialPort.Close();
         }
