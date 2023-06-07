@@ -15,5 +15,10 @@ public class WitActivation : MonoBehaviour
         {
             wit.Activate();
         }
+
+        if (Input.GetKeyDown(KeyCode.Space)) //space bar
+        {
+            wit.Activate();
+        }
     }
 }

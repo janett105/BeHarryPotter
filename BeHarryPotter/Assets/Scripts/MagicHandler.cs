@@ -21,10 +21,16 @@ public class MagicHandler : MonoBehaviour
 
         var at = new BHapticsHandler();
         at.Attacked_Bhaptics(BHapticsHandler.attackedDirection.Left);
-        }
+        var df = new ArmSleeveHandler();
+        df.firesignal();
+    }
     void Defense()
     {
         Debug.Log("This is defense");
+        var at = new BHapticsHandler();
+        at.Attacked_Bhaptics(BHapticsHandler.attackedDirection.Back);
+        var df = new ArmSleeveHandler();
+        df.icesignal();
     }
     void Freeze()
     {
