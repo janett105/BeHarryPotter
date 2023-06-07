@@ -1,12 +1,29 @@
-//sleeve¿¡ on/off, cool/hot Àü´Þ
+//sleeveï¿½ï¿½ on/off, cool/hot ï¿½ï¿½ï¿½ï¿½
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO.Ports;
 
 namespace HapticsHandler
 {
     public class ArmSleeveHandler : MonoBehaviour
     {
+        private Serial Port serialPort;
+
+        public string defenseFasilSignal = 'Failed';
+
+        private void Start(){
+            serialPort = new SerialPort("COM10", 9600);
+            serialPort.Open();
+        }
+        private void Update(){
+            if //(ë°©ì–´ ì‹¤íŒ¨ì‹œ){
+                serialPort.WriteLine(defenseFailSignal);
+            }
+        }
+        private void Quit(){
+            serialPort.Close();
+        }
 
     }
 }

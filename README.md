@@ -40,10 +40,14 @@ https://github.com/bhaptics/haptic-guide
 
 # Magic Wand 3D printing
 3D printing model
+use z-suite software
 https://www.thingiverse.com/thing:1069671
 
 # Thermal Haptics - Arm Sleeve(채윤지) 
 ardunity
+arduino and l298n with peltier
+make peltier hot and cold when user didn't defend attack
+https://deneb21.tistory.com/281
 
 # BeHarryPotter Game (Unity3D) (이은화)
 with Oculus Quest 2
