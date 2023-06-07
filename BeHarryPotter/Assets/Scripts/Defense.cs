@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using HapticsHandler;
+using static HapticsHandler.BHapticsHandler;
 
 public class Defense : MonoBehaviour
 {
@@ -13,6 +14,16 @@ public class Defense : MonoBehaviour
         var AttackType = ChooseAttackType(other);    //충돌 개체가 불 공격 or 얼음 공격
         var df = new ArmSleeveHandler();
 
+        if (AttackType == "FireBall")
+        {
+            Debug.Log("아이 뜨거워");
+
+        }
+        else if (AttackType == "IceBall")
+        {
+            Debug.Log("아이 차거워");
+
+        }
     }
     private string ChooseAttackType(Collision other)
     {
