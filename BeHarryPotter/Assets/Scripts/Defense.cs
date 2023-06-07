@@ -1,5 +1,5 @@
-//Defense collider Ãæµ¹ °¨Áö ÈÄ(¹æ¾î ¼º°ø)
-//AttackType µû¶ó 
+//Defense collider ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+//AttackType ï¿½ï¿½ï¿½ï¿½ 
 //arm sleeve signal
 using System.Collections;
 using System.Collections.Generic;
@@ -9,20 +9,21 @@ using static HapticsHandler.BHapticsHandler;
 
 public class Defense : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)    //collisor ¹üÀ§ ¾È¿¡ ´êÀ» ½Ã, °ø°ÝÃ¼µµ Collider component ÇÊ¼ö
+    private void OnCollisionEnter(Collision other)    //collisor ï¿½ï¿½ï¿½ï¿½ ï¿½È¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ Collider component ï¿½Ê¼ï¿½
     {
-        var AttackType = ChooseAttackType(other);    //Ãæµ¹ °³Ã¼°¡ ºÒ °ø°Ý or ¾óÀ½ °ø°Ý
+        var AttackType = ChooseAttackType(other);    //ï¿½æµ¹ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ or ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         var df = new ArmSleeveHandler();
 
         if (AttackType == "FireBall")
         {
-            Debug.Log("¾ÆÀÌ ¶ß°Å¿ö");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ß°Å¿ï¿½");
+            df.firesignal();
 
         }
         else if (AttackType == "IceBall")
         {
-            Debug.Log("¾ÆÀÌ Â÷°Å¿ö");
-
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å¿ï¿½");
+            df.icesignal();
         }
     }
     private string ChooseAttackType(Collision other)
