@@ -43,8 +43,8 @@ public class Player : MonoBehaviour
 
         if (direction.x == 1) { return  "right"; }
         else if (direction.x == -1) { return "left"; }
-        else if (direction.z == 1) { return "front"; }
-        else if (direction.z == -1) { return "back"; }
+        else if (direction.z == 1) { return "back"; }
+        else if (direction.z == -1) { return "front"; }
         else { return "None"; };
     }
 }

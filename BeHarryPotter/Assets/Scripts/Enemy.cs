@@ -9,6 +9,7 @@ public class Enemy : LivingEntity
     public GameObject target;
 
     public GameObject magicPrefab;
+    public Transform magicPos;
     private Transform enemyPos;
     public float speed;
 
@@ -32,9 +33,10 @@ public class Enemy : LivingEntity
     private void Start()
     {
         animator = this.gameObject.GetComponent<Animator>();
-        enemyPos = this.gameObject.GetComponent<Transform>();
+        //enemyPos = this.gameObject.GetComponent<Transform>();
+
     }
-    
+
     void Update()
     {
         if (updateTime > coolTime)
@@ -51,7 +53,8 @@ public class Enemy : LivingEntity
     IEnumerator magicAttack()
     {
         animator.SetBool("CanAttack", true);
-        GameObject magic = Instantiate(magicPrefab, enemyPos.transform);
+        //GameObject magic = Instantiate(magicPrefab, enemyPos.transform);
+        GameObject magic = Instantiate(magicPrefab, magicPos.transform.position, magicPos.transform.rotation);
 
         yield return new WaitForSeconds(2f);
 
