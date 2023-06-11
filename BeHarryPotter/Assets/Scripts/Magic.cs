@@ -50,8 +50,8 @@ public class Magic : MonoBehaviour
             GameObject tmp = GameObject.FindGameObjectWithTag("Player");
             target = tmp;
         }
-        transform.Translate((transform.position - target.transform.position) * speed * Time.deltaTime);
-
+        //transform.Translate((transform.position - target.transform.position) * speed * Time.deltaTime);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     
