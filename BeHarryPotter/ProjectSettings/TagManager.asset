@@ -8,6 +8,8 @@ TagManager:
   - RoomLight
   - SamplesInfoPanel
   - plane
+  - FireBall
+  - IceBall
   layers:
   - Default
   - TransparentFX
