@@ -21,7 +21,7 @@ public class Magic : MonoBehaviour
         }
         else if (other.collider.gameObject.CompareTag("Player"))
         {
-            if (gameObject.tag == "FireBall") //적공격
+            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") //적공격
             {
                 //Debug.Log("Player야");
                 Destroy(gameObject);
@@ -33,7 +33,7 @@ public class Magic : MonoBehaviour
         }
         else if(other.collider.gameObject.CompareTag("Enemy"))
         {
-            if (gameObject.tag == "FireBall") //적공격
+            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") //적공격
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
@@ -44,16 +44,12 @@ public class Magic : MonoBehaviour
         }
     }
 
-    //magic이 "PlayerAttack"이면 player와 충돌해도 사라지면 안 됨, enemy와 충돌하면 사라져야함. 
-    //magic이 fireball이면 지금 충돌처리 그대로 
-
     // Start is called before the first frame update
     void Start()
     {
         magicRigid = GetComponent<Rigidbody>();
         if (target == null)
         {
-
             GameObject tmp = GameObject.FindGameObjectWithTag("Player");
             target = tmp;
         }
