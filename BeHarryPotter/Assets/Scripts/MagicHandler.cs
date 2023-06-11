@@ -31,9 +31,9 @@ public class MagicHandler : MonoBehaviour
     }
     void Defense()
     {
-        GameObject magic = Instantiate(defensePrefab, magicPos.transform.position, magicPos.transform.rotation);
+        GameObject magic = Instantiate(defensePrefab, new Vector3(0.74f, 7.13f, -0.67f), Quaternion.Euler(new Vector3(90,0,0)));
         Debug.Log("This is defense");
-        Destroy(magic, 3f);
+        Destroy(magic, 10000000f);
     }
     void Freeze()
     {
