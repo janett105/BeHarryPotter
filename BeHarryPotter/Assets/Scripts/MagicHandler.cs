@@ -3,12 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using HapticsHandler;
+using UnityEditor;
 
-public class MagicHandler : Magic
+public class MagicHandler : MonoBehaviour
 {
-    public GameObject magicPrefab;
+    public GameObject firePrefab;
+    //    public GameObject icePrefab;
+    public GameObject defensePrefab;
+    public Transform magicPos;
 
-    public void MagicCheck(string[] values)    //vlaues : Wit에서 음성 인식 성공 시, intent 값 받아옴
+    private float speed = 5f;
+
+    public void MagicCheck(string[] values)    //values : Wit에서 음성 인식 성공 시, intent 값 받아옴
     {
         //마법 : Incendio
         if (values[0] == "flame") { Flame(); };
@@ -17,14 +23,17 @@ public class MagicHandler : Magic
         //마법 : Immobulus
         if (values[0] == "freeze") { Freeze(); };
     }
-
-    void Flame(){
- //       GameObject magic = Instantiate(magicPrefab, magicPos.position, magicPos.rotation);
+    
+    void Flame()
+    {
+        GameObject magic = Instantiate(firePrefab, magicPos.transform.position, magicPos.transform.rotation);
         Debug.Log("This is flame");
     }
     void Defense()
     {
+        GameObject magic = Instantiate(defensePrefab, magicPos.transform.position, magicPos.transform.rotation);
         Debug.Log("This is defense");
+        Destroy(magic, 3f);
     }
     void Freeze()
     {
