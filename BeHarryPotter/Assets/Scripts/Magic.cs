@@ -14,32 +14,42 @@ public class Magic : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.collider.gameObject.CompareTag("Plane"))
+        if(other.collider.gameObject.CompareTag("Plane"))   //Plane과 충돌 시
         {
             Debug.Log("Plane이야");
             Destroy(gameObject, 1f);
         }
-        else if (other.collider.gameObject.CompareTag("Player"))
+        else if (other.collider.gameObject.CompareTag("Player"))   //Player과 충돌 시
         {
-            if (gameObject.tag == "FireBall") //적공격
+            if (gameObject.tag == "FireBall") 
             {
-                //Debug.Log("Player야");
                 Destroy(gameObject);
             }
-            else if(gameObject.tag == "PlayerMagic") //플레이어 공격 
+            else if(gameObject.tag == "PlayerMagic")
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
         }
-        else if(other.collider.gameObject.CompareTag("Enemy"))
+        else if(other.collider.gameObject.CompareTag("Enemy"))   //Enemy과 충돌 시
         {
-            if (gameObject.tag == "FireBall") //적공격
+            if (gameObject.tag == "FireBall") 
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
-            else if (gameObject.tag == "PlayerMagic") //플레이어 공격 
+            else if (gameObject.tag == "PlayerMagic")
             {
                 Destroy(gameObject);
+            }
+        }
+        else if (other.collider.gameObject.CompareTag("Shield"))   //Shield과 충돌 시
+        {
+            if (gameObject.tag == "FireBall")
+            {
+                Destroy(gameObject);
+            }
+            else if (gameObject.tag == "PlayerMagic") 
+            {
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
         }
     }

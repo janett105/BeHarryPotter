@@ -3899,6 +3899,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 400090, guid: 8b79114391319fb4bb56f64adb410eff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.56
+      objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: 8b79114391319fb4bb56f64adb410eff, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3917,7 +3921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: 8b79114391319fb4bb56f64adb410eff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: 8b79114391319fb4bb56f64adb410eff, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8690,7 +8694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Voice: {fileID: 782036915}
   ValidateEarly: 0
-  intent: flame
+  intent: 
   confidenceThreshold: 0.6
   valueMatchers:
   - path: intents[0].name
@@ -8807,7 +8811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 1947871717301538, guid: 47659526ac7fa634a8164f2c1eaa0eff, type: 3}
-  defensePrefab: {fileID: 0}
+  defensePrefab: {fileID: 5377348284424047420, guid: 928fecafc6286804f9858e2abc7111eb, type: 3}
   magicPos: {fileID: 2090117916}
 --- !u!4 &2077877130 stripped
 Transform:

@@ -5,12 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - RoomLight
-  - SamplesInfoPanel
   - FireBall
   - IceBall
   - Plane
   - PlayerMagic
+  - Shield
   layers:
   - Default
   - TransparentFX
