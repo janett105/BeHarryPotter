@@ -14,14 +14,14 @@ public class Magic : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.collider.gameObject.CompareTag("Plane"))   //Plane°ú Ãæµ¹ ½Ã
+        if(other.collider.gameObject.CompareTag("Plane"))   //Planeï¿½ï¿½ ï¿½æµ¹ ï¿½ï¿½
         {
-            Debug.Log("PlaneÀÌ¾ß");
+            Debug.Log("Planeï¿½Ì¾ï¿½");
             Destroy(gameObject, 1f);
         }
-        else if (other.collider.gameObject.CompareTag("Player"))   //Player°ú Ãæµ¹ ½Ã
+        else if (other.collider.gameObject.CompareTag("Player"))   //Playerï¿½ï¿½ ï¿½æµ¹ ï¿½ï¿½
         {
-            if (gameObject.tag == "FireBall") 
+            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             {
                 Destroy(gameObject);
             }
@@ -30,9 +30,9 @@ public class Magic : MonoBehaviour
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
         }
-        else if(other.collider.gameObject.CompareTag("Enemy"))   //Enemy°ú Ãæµ¹ ½Ã
+        else if(other.collider.gameObject.CompareTag("Enemy"))   //Enemyï¿½ï¿½ ï¿½æµ¹ ï¿½ï¿½
         {
-            if (gameObject.tag == "FireBall") 
+            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
@@ -41,7 +41,7 @@ public class Magic : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        else if (other.collider.gameObject.CompareTag("Shield"))   //Shield°ú Ãæµ¹ ½Ã
+        else if (other.collider.gameObject.CompareTag("Shield"))   //Shieldï¿½ï¿½ ï¿½æµ¹ ï¿½ï¿½
         {
             if (gameObject.tag == "FireBall")
             {
@@ -54,16 +54,12 @@ public class Magic : MonoBehaviour
         }
     }
 
-    //magicÀÌ "PlayerAttack"ÀÌ¸é player¿Í Ãæµ¹ÇØµµ »ç¶óÁö¸é ¾È µÊ, enemy¿Í Ãæµ¹ÇÏ¸é »ç¶óÁ®¾ßÇÔ. 
-    //magicÀÌ fireballÀÌ¸é Áö±Ý Ãæµ¹Ã³¸® ±×´ë·Î 
-
     // Start is called before the first frame update
     void Start()
     {
         magicRigid = GetComponent<Rigidbody>();
         if (target == null)
         {
-
             GameObject tmp = GameObject.FindGameObjectWithTag("Player");
             target = tmp;
         }

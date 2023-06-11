@@ -8,7 +8,7 @@ using UnityEditor;
 public class MagicHandler : MonoBehaviour
 {
     public GameObject firePrefab;
-    //    public GameObject icePrefab;
+    public GameObject icePrefab;
     public GameObject defensePrefab;
     public Transform magicPos;
 
@@ -37,6 +37,7 @@ public class MagicHandler : MonoBehaviour
     }
     void Freeze()
     {
+        GameObject magic = Instantiate(icePrefab, magicPos.transform.position, magicPos.transform.rotation);
         Debug.Log("This is freeze");
     }
 }
