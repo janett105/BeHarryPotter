@@ -11,7 +11,7 @@ using HapticsHandler;
 public class Player : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)    //collisor 범위 안에 닿을 시, 공격체도 Collider component 필수
-    { 
+    {
         var AttackDirection = ChooseAttackDirection(other);    //충돌 방향
         var at = new BHapticsHandler();
 

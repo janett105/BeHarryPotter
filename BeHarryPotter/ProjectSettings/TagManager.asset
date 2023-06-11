@@ -7,9 +7,9 @@ TagManager:
   - Enemy
   - RoomLight
   - SamplesInfoPanel
-  - plane
   - FireBall
   - IceBall
+  - Plane
   layers:
   - Default
   - TransparentFX

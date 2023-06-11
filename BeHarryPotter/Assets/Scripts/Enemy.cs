@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Enemy : LivingEntity
@@ -8,11 +9,14 @@ public class Enemy : LivingEntity
     public GameObject target;
 
     public GameObject magicPrefab;
-    public Transform magicPos;
+    private Transform enemyPos;
     public float speed;
 
     public float spawnRate;
     private float timeAfterSpawn;
+
+    private float coolTime = 2f;
+    private float updateTime = 0f;
 
     private bool isDead = false;
 
@@ -28,21 +32,32 @@ public class Enemy : LivingEntity
     private void Start()
     {
         animator = this.gameObject.GetComponent<Animator>();
-        animator.SetBool("CanAttack", true);
-        StartCoroutine(magicAttack());
+        enemyPos = this.gameObject.GetComponent<Transform>();
+
     }
 
     void Update()
     {
-        
+        if (updateTime > coolTime)
+        {
+            updateTime = 0.0f;
+            StartCoroutine(magicAttack());
+        }
+        else
+        {
+            updateTime += Time.deltaTime;
+        }
     }
 
     IEnumerator magicAttack()
     {
         animator.SetBool("CanAttack", true);
-        GameObject magic = Instantiate(magicPrefab, magicPos.position, magicPos.rotation);
-        yield return new WaitForSeconds(3f);
-        StartCoroutine(magicAttack());
+        GameObject magic = Instantiate(magicPrefab, enemyPos.transform);
+
+        yield return new WaitForSeconds(2f);
+
+        animator.SetBool("CanAttack", false);
+        
     }
 
 }

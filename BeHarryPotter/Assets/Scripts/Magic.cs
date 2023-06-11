@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Magic : MonoBehaviour
 {
-    public Transform magicPos;
     public GameObject target;
 
     private Rigidbody magicRigid;
@@ -14,15 +13,18 @@ public class Magic : MonoBehaviour
 
     public int damage = 10;
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision other)
     {
-        if(collision.gameObject.tag == "Plane")
+        if(other.collider.gameObject.CompareTag("Plane"))
         {
-            Destroy(gameObject, 3f);
+            Debug.Log("Plane¿Ãæﬂ");
+
+            Destroy(gameObject, 1f);
         }
 
-        else if (collision.gameObject.tag == "Player")
+        else if (other.collider.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Playeræﬂ");
             Destroy(gameObject);
         }
     }
@@ -31,21 +33,25 @@ public class Magic : MonoBehaviour
     void Start()
     {
         magicRigid = GetComponent<Rigidbody>();
-        
-    }
-
-    private void OnColiisionEnter(Collider other)
-    {
-        if (other.tag == "Player")
+        if (target == null)
         {
-            Destroy(gameObject);
+
+            GameObject tmp = GameObject.FindGameObjectWithTag("Player");
+            target = tmp;
         }
     }
+ 
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate((target.transform.position - magicPos.position) * speed * Time.deltaTime);
+        if (target == null)
+        {
+            GameObject tmp = GameObject.FindGameObjectWithTag("Player");
+            target = tmp;
+        }
+        transform.Translate((transform.position - target.transform.position) * speed * Time.deltaTime);
+
     }
 
     

@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using HapticsHandler;
 
-public class MagicHandler : MonoBehaviour
+public class MagicHandler : Magic
 {
+    public GameObject magicPrefab;
+
     public void MagicCheck(string[] values)    //vlaues : Wit에서 음성 인식 성공 시, intent 값 받아옴
     {
         //마법 : Incendio
@@ -17,6 +19,7 @@ public class MagicHandler : MonoBehaviour
     }
 
     void Flame(){
+ //       GameObject magic = Instantiate(magicPrefab, magicPos.position, magicPos.rotation);
         Debug.Log("This is flame");
     }
     void Defense()
