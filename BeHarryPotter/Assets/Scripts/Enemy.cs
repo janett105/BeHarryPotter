@@ -19,7 +19,7 @@ public class Enemy : LivingEntity
     private float coolTime = 2f;
     private float updateTime = 0f;
 
-    private bool isDead = false;
+    //private bool isDead = false;
 
     public enum CurrentState { idle, attack, dead };
     public CurrentState curState;
@@ -33,8 +33,6 @@ public class Enemy : LivingEntity
     private void Start()
     {
         animator = this.gameObject.GetComponent<Animator>();
-        //enemyPos = this.gameObject.GetComponent<Transform>();
-
     }
 
     void Update()
@@ -53,7 +51,6 @@ public class Enemy : LivingEntity
     IEnumerator magicAttack()
     {
         animator.SetBool("CanAttack", true);
-        //GameObject magic = Instantiate(magicPrefab, enemyPos.transform);
         GameObject magic = Instantiate(magicPrefab, magicPos.transform.position, magicPos.transform.rotation);
 
         yield return new WaitForSeconds(2f);
