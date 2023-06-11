@@ -10,13 +10,8 @@ public class Enemy : LivingEntity
 
     public GameObject magicPrefab;
     public Transform magicPos;
-    private Transform enemyPos;
-    public float speed;
 
-    public float spawnRate;
-    private float timeAfterSpawn;
-
-    private float coolTime = 2f;
+    public float coolTime;
     private float updateTime = 0f;
 
     private bool isDead = false;
