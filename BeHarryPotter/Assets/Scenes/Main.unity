@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4158,8 +4158,7 @@ MonoBehaviour:
   target: {fileID: 508009892}
   magicPrefab: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
   magicPos: {fileID: 1208105619}
-  speed: 1.5
-  spawnRate: 2
+  coolTime: 11
   curState: 1
 --- !u!95 &972111212
 Animator:
@@ -5588,8 +5587,7 @@ MonoBehaviour:
   target: {fileID: 508009892}
   magicPrefab: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
   magicPos: {fileID: 448019147}
-  speed: 1.5
-  spawnRate: 2
+  coolTime: 7
   curState: 1
 --- !u!4 &1342715250 stripped
 Transform:
@@ -7010,8 +7008,7 @@ MonoBehaviour:
   target: {fileID: 508009892}
   magicPrefab: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
   magicPos: {fileID: 1432087770}
-  speed: 1.5
-  spawnRate: 2
+  coolTime: 5
   curState: 1
 --- !u!95 &1659479746
 Animator:
@@ -8424,8 +8421,7 @@ MonoBehaviour:
   target: {fileID: 508009892}
   magicPrefab: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
   magicPos: {fileID: 1762130775}
-  speed: 1.5
-  spawnRate: 2
+  coolTime: 9
   curState: 1
 --- !u!95 &1980701946
 Animator:
