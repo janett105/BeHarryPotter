@@ -41,8 +41,8 @@ public class Player : MonoBehaviour
     {
         Vector3 direction = other.GetContact(0).normal;
 
-        if (direction.x == 1) { return  "right"; }
-        else if (direction.x == -1) { return "left"; }
+        if (direction.x == 1) { return  "left"; }
+        else if (direction.x == -1) { return "right"; }
         else if (direction.z == 1) { return "back"; }
         else if (direction.z == -1) { return "front"; }
         else { return "None"; };
