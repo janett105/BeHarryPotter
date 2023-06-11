@@ -2,6 +2,7 @@ using Meta.WitAi;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class WitActivation : MonoBehaviour
 {
@@ -10,7 +11,12 @@ public class WitActivation : MonoBehaviour
     private void Update()
     {
         if (!wit) wit = GetComponent<Wit>();
-        if (Input.GetKeyDown(KeyCode.Space))    //space bar누르면,
+        if (OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger)>0.7f)    //controller button 누르면,
+        {
+            wit.Activate();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)) //space bar
         {
             wit.Activate();
         }

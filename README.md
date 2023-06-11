@@ -1,15 +1,13 @@
-# BeHarryPotter
-
-## Voice Command(박지후)
+# Voice Command(박지후)
 Oculus voice SDK with Wit.ai
 
 Wit.ai 
 https://wit.ai/apps/184718221171935/understanding
 
 ### 구현 기능
-1. **Wit Activation(scripit)** : event(wand button click)에 따른 음성 인식 시작/종료 (현재는 space bar)
-2. **VisualFeedback** :  Wit event(시작, 종료, 처리 중, 버튼 안 누르고 있을 때, 에러) 사용자에게 보여주는 text canvas
-3. **Wit.ai training** : 
+1. **Wit Activation(scripit)** : event(Axis1D.SecondaryHandTrigger,Unity Axis ID-12)에 따른 음성 인식 시작/종료 
+3. **VisualFeedback** :  Wit event(시작, 종료, 처리 중, 버튼 안 누르고 있을 때, 에러) 사용자에게 보여주는 text canvas
+4. **Wit.ai training** : 
 
   * Immobulus - freeze(고드름 발사)
   * protego - defense(방어by 팔토시)
@@ -25,7 +23,9 @@ https://github.com/wit-ai/wit-unity
 
 https://www.youtube.com/watch?v=SJ96P-ZhBoc&themeRefresh=1
 
-## Bhaptics(박지후)
+![image](https://github.com/ImmersiveContentsTeam1/BeHarryPotter/assets/81574359/ea1daac2-dd64-427c-a56d-8d866db5094e)
+
+# Bhaptics(박지후)
 Tactsuit X40
 
 Bhaptics developer portal
@@ -38,21 +38,18 @@ https://bhaptics.notion.site/Plug-in-deployed-events-to-Unity-33cc33dcfa44426899
 
 https://github.com/bhaptics/haptic-guide
 
-## Magic Wand 3D printing
+# Magic Wand 3D printing
 3D printing model
+use z-suite software
 https://www.thingiverse.com/thing:1069671
 
-## Thermal Haptics - Arm Sleeve(채윤지) 
+# Thermal Haptics - Arm Sleeve(채윤지) 
 ardunity
+arduino and l298n with peltier
+make peltier hot and cold when user didn't defend attack
+https://deneb21.tistory.com/281
 
-## 오류
-warning: LF will be replaced by CRLF in bora.txt.
-The file will have its original line endings in your working directory
-```
-git config --global core.autocrlf true
-```
-
-## BeHarryPotter Game (Unity3D) (이은화)
+# BeHarryPotter Game (Unity3D) (이은화)
 with Oculus Quest 2
 
 VR로 마법 전투 게임을 구현하였다. 
@@ -61,4 +58,22 @@ VR로 마법 전투 게임을 구현하였다.
 
 일반 공격과 불 공격이 있다. 
 
-플레이어는 마법으로 적을 무찌를 수 있도록 개발하였다. 
+플레이어는 마법으로 적을 무찌를 수 있도록 개발하였다.
+
+### 구현 기능
+1. **Player.cs** : player collider 충돌 감지 후, 공격Type+충돌 방향+방어 성공 여부 따라, bhaptics(attacked) or sleeve(defense) signal
+2. **Magic Attack.cs** : 
+
+
+## 오류
+1. warning: LF will be replaced by CRLF in bora.txt. The file will have its original line endings in your working directory
+```
+git config --global core.autocrlf true
+```
+
+2. .gitignore 문제
+https://stackoverflow.com/questions/32783295/unity-git-ignore-library
+
+
+
+

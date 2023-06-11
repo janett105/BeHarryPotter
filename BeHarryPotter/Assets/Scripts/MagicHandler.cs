@@ -1,19 +1,16 @@
+//음성인식  일치 시 마법 activate
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using AttackDefense;
+using HapticsHandler;
 
 public class MagicHandler : MonoBehaviour
 {
-    //음성인식+모션 둘 다 일치 시 마법
-    //vlaues : Wit에서 음성 인식 성공 시, intent 값 받아옴
-    public void MagicCheck(string[] values) 
+    public void MagicCheck(string[] values)    //vlaues : Wit에서 음성 인식 성공 시, intent 값 받아옴
     {
         //마법 : Incendio
         if (values[0] == "flame") { Flame(); };
-        //마법 : Wingardium Leviosa
-        if (values[0] == "levitate") { Levitate(); };
-        //마법 : Repello
+        //마법 : Protego
         if (values[0] == "defense") { Defense(); };
         //마법 : Immobulus
         if (values[0] == "freeze") { Freeze(); };
@@ -22,15 +19,18 @@ public class MagicHandler : MonoBehaviour
     void Flame(){
         Debug.Log("This is flame");
 
-        var at = new AttackedHandler();
-        at.Attacked_Bhaptics(AttackedHandler.attackedDirection.Left);
-        }
-    void Levitate() {
-        Debug.Log("This is levitate");
+        var at = new BHapticsHandler();
+        at.Attacked_Bhaptics(BHapticsHandler.attackedDirection.Left);
+        var df = new ArmSleeveHandler();
+        df.firesignal();
     }
     void Defense()
     {
         Debug.Log("This is defense");
+        var at = new BHapticsHandler();
+        at.Attacked_Bhaptics(BHapticsHandler.attackedDirection.Back);
+        var df = new ArmSleeveHandler();
+        df.icesignal();
     }
     void Freeze()
     {
