@@ -57,11 +57,13 @@ public class Enemy : LivingEntity
         yield return new WaitForSeconds(3f);
         GameObject magic = Instantiate(magicPrefab, magicPos.position, magicPos.rotation);
 
+        
         Destroy(magic, 2f);
 
         StartCoroutine(magicAttack());
         animator.SetBool("CanAttack", false);
     }
+
 
     IEnumerator OnDamaged()
     {
