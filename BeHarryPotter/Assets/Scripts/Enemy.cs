@@ -33,9 +33,8 @@ public class Enemy : LivingEntity
     {
         animator = this.gameObject.GetComponent<Animator>();
         enemyPos = this.gameObject.GetComponent<Transform>();
-
     }
-
+    
     void Update()
     {
         if (updateTime > coolTime)
