@@ -9,7 +9,7 @@ public class Enemy : LivingEntity
 
     public GameObject magicPrefab;
     public Transform magicPos;
-    public float speed = 2;
+    public float speed;
 
     public float spawnRate;
     private float timeAfterSpawn;
@@ -28,7 +28,8 @@ public class Enemy : LivingEntity
     private void Start()
     {
         animator = this.gameObject.GetComponent<Animator>();
-        
+        animator.SetBool("CanAttack", true);
+        StartCoroutine(magicAttack());
     }
 
     void Update()
@@ -36,45 +37,12 @@ public class Enemy : LivingEntity
         
     }
 
-    public IEnumerator CheckState()
-    {
-        while (!isDead)
-        {
-            yield return new WaitForSeconds(2f);
-
-            if (startingHealth == 0)
-            {
-                animator.SetTrigger("Dead");
-                isDead = true;
-            }
-
-        }
-    }
-
     IEnumerator magicAttack()
     {
         animator.SetBool("CanAttack", true);
-        yield return new WaitForSeconds(3f);
         GameObject magic = Instantiate(magicPrefab, magicPos.position, magicPos.rotation);
-
-        
-        Destroy(magic, 2f);
-
+        yield return new WaitForSeconds(3f);
         StartCoroutine(magicAttack());
-        animator.SetBool("CanAttack", false);
-    }
-
-
-    IEnumerator OnDamaged()
-    {
-        if (health > 0)
-        {
-            yield return null;
-        }
-        else
-        {
-            animator.SetTrigger("Dead");
-        }
     }
 
 }
