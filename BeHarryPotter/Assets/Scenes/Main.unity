@@ -8687,7 +8687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 1947871717301538, guid: 47659526ac7fa634a8164f2c1eaa0eff, type: 3}
   icePrefab: {fileID: 4597139997174728396, guid: de66ea8d6c6c84c499ff3aea3662a78f, type: 3}
-  defensePrefab: {fileID: 0}
+  defensePrefab: {fileID: 5377348284424047420, guid: 928fecafc6286804f9858e2abc7111eb, type: 3}
   magicPos: {fileID: 2090117916}
 --- !u!4 &2077877130 stripped
 Transform:
