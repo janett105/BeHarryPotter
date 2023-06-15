@@ -20,9 +20,9 @@ MonoBehaviour:
     isPrivate: 0
     createdAt: 2023-05-03T01:13:08-0700
     trainingStatus: 1
-    lastTrainDuration: 25
-    lastTrainedAt: 2023-05-23T23:29:04-0700
-    nextTrainAt: 2023-05-23T23:28:39-0700
+    lastTrainDuration: 24
+    lastTrainedAt: 2023-06-11T09:36:08-0700
+    nextTrainAt: 2023-06-11T09:35:44-0700
     intents:
     - id: 193516830298129
       name: defense
@@ -181,5 +181,4 @@ MonoBehaviour:
   _manifestLocalPath: ConduitManifest-2a746dc5-01f6-48fa-9fa6-a502d2e272fe.json
   excludedAssemblies:
   - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   relaxedResolution: 0

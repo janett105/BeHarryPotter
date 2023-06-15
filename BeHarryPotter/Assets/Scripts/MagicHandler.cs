@@ -46,9 +46,8 @@ public class MagicHandler : MonoBehaviour
         GameObject magic = Instantiate(defensePrefab, new Vector3(0.74f, 7.13f, -0.67f), Quaternion.Euler(new Vector3(90,0,0)));
         Debug.Log("This is defense");
         Destroy(magic, 10f);
-        this.audio.Play();
-        //付过家府
     }
+        //付过家府
     void Freeze()
     {
         GameObject magic = Instantiate(icePrefab, magicPos.transform.position, magicPos.transform.rotation);
