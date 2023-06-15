@@ -11,6 +11,8 @@ public class MagicHandler : MonoBehaviour
     public GameObject icePrefab;
     public GameObject defensePrefab;
     public Transform magicPos;
+    public AudioSource audio;
+    public AudioClip attacksound;
 
     private float speed = 5f;
 
@@ -23,21 +25,34 @@ public class MagicHandler : MonoBehaviour
         //付过 : Immobulus
         if (values[0] == "freeze") { Freeze(); };
     }
-    
+
+
+    public void Attacksound()
+    {
+        audio.PlayOneShot(attacksound);
+    }
+
+
     void Flame()
     {
-        GameObject magic = Instantiate(firePrefab, magicPos.transform.position, magicPos.transform.rotation);
+        GameObject magic = Instantiate(firePrefab, magicPos.transform.position, magicPos.transform.rotation); 
         Debug.Log("This is flame");
+        Attacksound();
+        //阂家府
+        
     }
     void Defense()
     {
         GameObject magic = Instantiate(defensePrefab, new Vector3(0.74f, 7.13f, -0.67f), Quaternion.Euler(new Vector3(90,0,0)));
         Debug.Log("This is defense");
-        Destroy(magic, 10000000f);
+        Destroy(magic, 10f);
+        this.audio.Play();
+        //付过家府
     }
     void Freeze()
     {
         GameObject magic = Instantiate(icePrefab, magicPos.transform.position, magicPos.transform.rotation);
         Debug.Log("This is freeze");
+        Attacksound();
     }
 }

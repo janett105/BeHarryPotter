@@ -14,36 +14,36 @@ public class Magic : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.collider.gameObject.CompareTag("Plane"))   //Plane�� �浹 ��
+        if(other.collider.gameObject.CompareTag("Plane"))   //plane에 닿았을 때
         {
             Debug.Log("Plane�̾�");
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 1f);       
         }
-        else if (other.collider.gameObject.CompareTag("Player"))   //Player�� �浹 ��
+        else if (other.collider.gameObject.CompareTag("Player"))   
         {
-            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") //������
+            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") //적 공격이 나한테 맞았을 때 -> 으악 소리 삽입
             {
                 Destroy(gameObject);
             }
-            else if(gameObject.tag == "PlayerMagic")
+            else if(gameObject.tag == "PlayerMagic") 
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
         }
-        else if(other.collider.gameObject.CompareTag("Enemy"))   //Enemy�� �浹 ��
+        else if(other.collider.gameObject.CompareTag("Enemy")) 
         {
-            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") //������
+            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") 
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
-            else if (gameObject.tag == "PlayerMagic")
+            else if (gameObject.tag == "PlayerMagic")//내 공격이 적한테 맞았을 때 
             {
                 Destroy(gameObject);
             }
         }
-        else if (other.collider.gameObject.CompareTag("Shield"))   //Shield�� �浹 ��
+        else if (other.collider.gameObject.CompareTag("Shield")) 
         {
-            if (gameObject.tag == "FireBall")
+            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall")    //적 공격을 방어했을 때
             {
                 Destroy(gameObject);
             }
