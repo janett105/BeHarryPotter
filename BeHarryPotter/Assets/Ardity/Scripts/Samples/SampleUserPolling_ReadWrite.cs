@@ -22,7 +22,7 @@ namespace HapticsHandler
 
         public void firesignal()
         {
-            Debug.Log("나지금 fire보낸다?");
+            //Debug.Log("나지금 fire보낸다?");
             serialController.SendSerialMessage("A");
 
             string message = serialController.ReadSerialMessage();
@@ -40,7 +40,7 @@ namespace HapticsHandler
         }
         public void icesignal()
         {
-            Debug.Log("나지금 ice보낸다?");
+            //Debug.Log("나지금 ice보낸다?");
             serialController.SendSerialMessage("Z");
 
             string message = serialController.ReadSerialMessage();
@@ -65,13 +65,13 @@ namespace HapticsHandler
 
             if (AttackType == "FireBall")
             {
-                Debug.Log("파이어볼 방어");
+                //Debug.Log("파이어볼 방어");
                 firesignal();
 
             }
             else if (AttackType == "IceBall")
             {
-                Debug.Log("아이스볼 방어");
+                //Debug.Log("아이스볼 방어");
                 icesignal();
             }
         }
@@ -81,5 +81,28 @@ namespace HapticsHandler
             else if (other.collider.gameObject.CompareTag("IceBall")) { return "IceBall"; }
             else { return "None"; }
         }
+
+
+        private void Update()
+        {
+
+            OVRInput.Update();
+
+            //if (OVRInput.Get(OVRInput.RawButton.B))    //2. A button 누르면 
+            //{
+            //    firesignal();
+            //    Debug.Log("dsbdusfgsgbfsgbfubsuf s");
+            //}
+            //else if (OVRInput.GetUp(OVRInput.Button.One))    //2. A button 떼면
+            //{
+            //    Debug.Log("button, end");
+            //    //wit.Deactivate();
+            //}
+            if (OVRInput.Get(OVRInput.RawButton.A))    //2. A button 누르면 
+            {
+                icesignal();
+            }
+        }
+
     }
 }

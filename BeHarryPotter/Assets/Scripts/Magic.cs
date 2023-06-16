@@ -45,6 +45,7 @@ public class Magic : MonoBehaviour
         {
             if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall")    //적 공격을 방어했을 때
             {
+                Debug.Log("방어!!!!!!!!!!!!!");
                 Destroy(gameObject);
             }
             else if (gameObject.tag == "PlayerMagic") 

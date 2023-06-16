@@ -34,7 +34,7 @@ void loop() {
             Serial.println("ICE!!!!!!!!!!!!!");
             digitalWrite(dir1,HIGH);
             digitalWrite(dir2,LOW);
-            analogWrite(speed,127);
+            analogWrite(speed,250);
             delay(3000);
             digitalWrite(speed,0);
             break;

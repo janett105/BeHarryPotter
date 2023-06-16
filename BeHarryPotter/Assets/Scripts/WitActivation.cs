@@ -13,38 +13,16 @@ public class WitActivation : MonoBehaviour
         if (!wit) wit = GetComponent<Wit>();
 
         OVRInput.Update();
-        
-        if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger)>0.5f)    //1. trigger
-        {
-            Debug.Log("trigger, start");
-            wit.ActivateImmediately();
-        }
-        else
-        {
-            //if(wit.)
-            wit.Deactivate();
-        }
 
-        if (OVRInput.GetDown(OVRInput.Button.One))    //2. A button ´©¸£¸é 
+        if (OVRInput.Get(OVRInput.RawButton.A))    //2. A button ´©¸£¸é 
         {
-            Debug.Log("button, start");
-            wit.ActivateImmediately();
-        }
-        else if(OVRInput.GetUp(OVRInput.Button.One))    //2. A button ¶¼¸é
-        {
-            //if (wit.)
-                wit.Deactivate();
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space)) //test. space bar
-        {
-            Debug.Log("spacebar, start");
-            wit.ActivateImmediately();
+            wit.Activate();
         }
-        else
-        {
-            //if (wit.)
-                wit.Deactivate();
-        }
+        //else if (OVRInput.GetUp(OVRInput.Button.One))    //2. A button ¶¼¸é
+        //{
+        //    Debug.Log("button, end");
+        //    //wit.Deactivate();
+        //}
     }
 }

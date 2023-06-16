@@ -17,22 +17,18 @@ public class Player : MonoBehaviour
 
         if (AttackDirection == "right")
         {
-            Debug.Log("오른쪽이 아야합니다!");
             at.Attacked_Bhaptics(BHapticsHandler.attackedDirection.Right);
         }
         else if(AttackDirection == "left")
         {
-            Debug.Log("왼쪽이 아야합니다!");
             at.Attacked_Bhaptics(BHapticsHandler.attackedDirection.Left);
         }
         else if (AttackDirection == "front")
         {
-            Debug.Log("앞이 아야합니다!");
             at.Attacked_Bhaptics(BHapticsHandler.attackedDirection.Front);
         }
         else if (AttackDirection == "back")
         {
-            Debug.Log("뒤가 아야합니다!");
             at.Attacked_Bhaptics(BHapticsHandler.attackedDirection.Back);
         }
     }
