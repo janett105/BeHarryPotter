@@ -10,11 +10,10 @@ public class WitActivation : MonoBehaviour
 
     private void Update()
     {
-        //OVRInput.Update(){
-
-        //}
         if (!wit) wit = GetComponent<Wit>();
 
+        OVRInput.Update();
+        
         if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger)>0.5f)    //1. trigger
         {
             Debug.Log("trigger, start");
