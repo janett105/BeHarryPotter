@@ -16,7 +16,7 @@ public class Magic : MonoBehaviour
     {
         if(other.collider.gameObject.CompareTag("Plane"))   //plane에 닿았을 때
         {
-            Debug.Log("Plane�̾�");
+            Debug.Log("Plane이야");
             Destroy(gameObject, 1f);       
         }
         else if (other.collider.gameObject.CompareTag("Player"))   
