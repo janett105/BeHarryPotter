@@ -2,15 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//[System.Serializable]
+//public class Sound
+//{
+    //public string soundName;
+    //public AudioClip clip;
+//}
+
 public class Magic : MonoBehaviour
 {
     public GameObject target;
     private Rigidbody magicRigid;
+    //public AudioSource audio;
+    //public AudioClip defensesound;
 
     public float speed;
     public float rate = 3;
 
     public int damage = 10;
+
+
+    // public void Defensesound()
+    // {
+    //     audio.PlayOneShot(defensesound);
+    // }
 
     void OnCollisionEnter(Collision other)
     {
@@ -24,6 +40,7 @@ public class Magic : MonoBehaviour
             if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") //적 공격이 나한테 맞았을 때 -> 으악 소리 삽입
             {
                 Destroy(gameObject);
+                
             }
             else if(gameObject.tag == "PlayerMagic") 
             {
@@ -46,6 +63,7 @@ public class Magic : MonoBehaviour
             if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall")    //적 공격을 방어했을 때
             {
                 Destroy(gameObject);
+                
             }
             else if (gameObject.tag == "PlayerMagic") 
             {

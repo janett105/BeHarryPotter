@@ -99,9 +99,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1908087415854957721, guid: 2d455b422dae9f34793a0529407faf32, type: 3}
+  audio: {fileID: 0}
+  defensesound: {fileID: 0}
   speed: 20
   rate: 3
   damage: 10
+  soundEffects: []
 --- !u!135 &7184361373780121363
 SphereCollider:
   m_ObjectHideFlags: 0

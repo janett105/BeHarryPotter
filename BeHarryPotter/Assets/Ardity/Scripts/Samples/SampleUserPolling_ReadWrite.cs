@@ -20,9 +20,9 @@ namespace HapticsHandler
             serialController = GameObject.Find("SerialController").GetComponent<SerialController>();
         }
 
-        public void firesignal()
+        public void leftsignal()
         {
-            Debug.Log("나지금 fire보낸다?");
+            Debug.Log("나지금 left보낸다?");
             serialController.SendSerialMessage("A");
 
             string message = serialController.ReadSerialMessage();
@@ -38,10 +38,28 @@ namespace HapticsHandler
             else
                 Debug.Log("Message arrived: " + message);
         }
-        public void icesignal()
+        public void rightsignal()
         {
-            Debug.Log("나지금 ice보낸다?");
+            Debug.Log("나지금 right보낸다?");
             serialController.SendSerialMessage("Z");
+
+            string message = serialController.ReadSerialMessage();
+
+            if (message == null)
+                return;
+
+            // Check if the message is plain data or a connect/disconnect event.
+            if (ReferenceEquals(message, SerialController.SERIAL_DEVICE_CONNECTED))
+                Debug.Log("Connection established");
+            else if (ReferenceEquals(message, SerialController.SERIAL_DEVICE_DISCONNECTED))
+                Debug.Log("Connection attempt failed or disconnection detected");
+            else
+                Debug.Log("Message arrived: " + message);
+        }
+        public void frontsignal()
+        {
+            Debug.Log("나지금 front보낸다?");
+            serialController.SendSerialMessage("F");
 
             string message = serialController.ReadSerialMessage();
 
@@ -63,22 +81,29 @@ namespace HapticsHandler
         {
             var AttackType = ChooseAttackType(other);
 
-            if (AttackType == "FireBall")
+            if (AttackType == "left")
             {
-                Debug.Log("파이어볼 방어");
-                firesignal();
+                Debug.Log("left 방어");
+                leftsignal();
 
             }
-            else if (AttackType == "IceBall")
+            else if (AttackType == "right")
             {
-                Debug.Log("아이스볼 방어");
-                icesignal();
+                Debug.Log("right 방어");
+                rightsignal();
             }
+            else if (AttackType == "front")
+            {
+                Debug.Log("front 방어");
+                frontsignal();
+            }
+
         }
         private string ChooseAttackType(Collision other)
         {
-            if (other.collider.gameObject.CompareTag("FireBall")) { return "FireBall"; }
-            else if (other.collider.gameObject.CompareTag("IceBall")) { return "IceBall"; }
+            if (other.collider.gameObject.CompareTag("left")) { return "left"; }
+            else if (other.collider.gameObject.CompareTag("right")) { return "right"; }
+            else if (other.collider.gameObject.CompareTag("front")) { return "front"; }
             else { return "None"; }
         }
     }

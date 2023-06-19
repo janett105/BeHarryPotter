@@ -8,8 +8,30 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using HapticsHandler;
 
+
+
 public class Player : MonoBehaviour
 {
+    public AudioClip[] soundEffects;  // 다른 효과음을 담을 배열
+
+    private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    // 플레이어의 행동에 따라 다른 효과음을 재생하는 함수
+    public void PlaySoundEffect(int index)
+    {
+        if (index >= 0 && index < soundEffects.Length)
+        {
+            audioSource.clip = soundEffects[index];
+            audioSource.Play();
+        }
+    }
+
+
     private void OnCollisionEnter(Collision other)    //collisor 범위 안에 닿을 시, 공격체도 Collider component 필수
     {
         var AttackDirection = ChooseAttackDirection(other);    //충돌 방향
