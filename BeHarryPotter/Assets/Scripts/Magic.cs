@@ -37,7 +37,7 @@ public class Magic : MonoBehaviour
         }
         else if (other.collider.gameObject.CompareTag("Player"))   
         {
-            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") //적 공격이 나한테 맞았을 때 -> 으악 소리 삽입
+            if (gameObject.tag == "IceBall") //적 공격이 나한테 맞았을 때 -> 으악 소리 삽입
             {
                 Destroy(gameObject);
                 
@@ -49,7 +49,7 @@ public class Magic : MonoBehaviour
         }
         else if(other.collider.gameObject.CompareTag("Enemy")) 
         {
-            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall") 
+            if (gameObject.tag == "IceBall") 
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
@@ -60,8 +60,9 @@ public class Magic : MonoBehaviour
         }
         else if (other.collider.gameObject.CompareTag("Shield")) 
         {
-            if (gameObject.tag == "FireBall" || gameObject.tag == "IceBall")    //적 공격을 방어했을 때
+            if (gameObject.tag == "IceBall")    //적 공격을 방어했을 때
             {
+                Debug.Log("방어!!!!!!!!!!!!!");
                 Destroy(gameObject);
                 
             }

@@ -1,3 +1,6 @@
+//player collider 충돌 감지 후(방어 실패)
+//Bhaptics signal + ArmSleeve signal(Sample User Polling_readwrite script)
+
 /**
  * Ardity (Serial Communication for Arduino + Unity)
  * Author: Daniel Wilches <dwilches@gmail.com>
@@ -30,7 +33,6 @@ namespace HapticsHandler
             if (message == null)
                 return;
 
-            // Check if the message is plain data or a connect/disconnect event.
             if (ReferenceEquals(message, SerialController.SERIAL_DEVICE_CONNECTED))
                 Debug.Log("Connection established");
             else if (ReferenceEquals(message, SerialController.SERIAL_DEVICE_DISCONNECTED))
@@ -48,7 +50,6 @@ namespace HapticsHandler
             if (message == null)
                 return;
 
-            // Check if the message is plain data or a connect/disconnect event.
             if (ReferenceEquals(message, SerialController.SERIAL_DEVICE_CONNECTED))
                 Debug.Log("Connection established");
             else if (ReferenceEquals(message, SerialController.SERIAL_DEVICE_DISCONNECTED))
@@ -77,34 +78,39 @@ namespace HapticsHandler
 
 
         //방어막 object script(Defense)
-        private void OnCollisionEnter(Collision other)    //방어막 object : collider, 이 script있으면 됨 
+        private void OnCollisionEnter(Collision other)
         {
-            var AttackType = ChooseAttackType(other);
+            SignalToSleeve(ChooseAttackDirection(other));
+        }
 
-            if (AttackType == "left")
+        private void SignalToSleeve(string AttackDirection)
+        {
+            if (AttackDirection == "front")
             {
-                Debug.Log("left 방어");
-                leftsignal();
-
-            }
-            else if (AttackType == "right")
-            {
-                Debug.Log("right 방어");
-                rightsignal();
-            }
-            else if (AttackType == "front")
-            {
-                Debug.Log("front 방어");
                 frontsignal();
+            }
+            else if(AttackDirection == "left")
+            {
+                leftsignal();
+            }
+            else if (AttackDirection == "right")
+            {
+                rightsignal();
             }
 
         }
-        private string ChooseAttackType(Collision other)
+
+        private string ChooseAttackDirection(Collision other)
         {
-            if (other.collider.gameObject.CompareTag("left")) { return "left"; }
-            else if (other.collider.gameObject.CompareTag("right")) { return "right"; }
-            else if (other.collider.gameObject.CompareTag("front")) { return "front"; }
-            else { return "None"; }
+            Vector3 direction = other.GetContact(0).normal;
+
+            Debug.Log(direction);
+
+            if (0.5 <= direction.x || direction.x <= 1.5) { return "left"; }
+            else if (-1.5 <= direction.x || direction.x <= -0.5) { return "right"; }
+            else if (direction.z == 1) { return "back"; }
+            else if (direction.z == -1) { return "front"; }
+            else { return "None"; };
         }
     }
 }

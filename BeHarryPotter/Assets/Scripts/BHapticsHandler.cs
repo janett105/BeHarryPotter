@@ -17,16 +17,18 @@ namespace HapticsHandler
             if (BhapticsLibrary.IsBhapticsAvailable(isAutoRunPlayer))
             {
                 if (direction == attackedDirection.Left) {
-                    Debug.Log("bhaptics_left");
-                    BhapticsLibrary.Play("attacked_left"); }
+                    BhapticsLibrary.Play("attacked_left");
+                    Debug.Log("∫Ò«›∆ΩΩ∫ øﬁ¬ ");
+                }
                 else if (direction == attackedDirection.Right) {
-                    Debug.Log("bhaptics_right");
-                    BhapticsLibrary.Play("attacked_right"); }
+                    BhapticsLibrary.Play("attacked_right");
+                    Debug.Log("∫Ò«›∆ΩΩ∫ ø¿∏•¬ ");
+                }
                 else if (direction == attackedDirection.Front) {
-                    Debug.Log("bhaptics_front");
-                    BhapticsLibrary.Play("attacked_front"); }
+                    BhapticsLibrary.Play("attacked_front");
+                    Debug.Log("∫Ò«›∆ΩΩ∫ æ’¬ ");
+                }
                 else if (direction == attackedDirection.Back) {
-                    Debug.Log("bhaptics_back");
                     BhapticsLibrary.Play("attacked_back"); }
             }
         }
