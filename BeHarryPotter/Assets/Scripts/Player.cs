@@ -1,5 +1,5 @@
 //player collider 충돌 감지 후(방어 실패)
-//Bhaptics signal + ArmSleeve signal(Sample User Polling_readwrite script)
+//Bhaptics signal 
 using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
             audioSource.Play();
         }
     }
-
 
     private void OnCollisionEnter(Collision other)    //collisor 범위 안에 닿을 시, 공격체도 Collider component 필수
     {
@@ -63,9 +62,9 @@ public class Player : MonoBehaviour
     {
         Vector3 direction = other.GetContact(0).normal;
 
-        if (direction.z == -1) { return "front"; }
-        else if (-1.5 <= direction.x && direction.x <= -0.5){return "right";}
-        else if (0.5<=direction.x && direction.x <= 1.5) {return  "left";}
+        if (-1.5 <= direction.x && direction.x <= -0.5) { return "right"; }
+        else if (-1.5 <= direction.z && direction.z <= -0.5) { return "front"; }
+        else if (0.5 <= direction.x && direction.x <= 1.5) { return "left"; }
         else if (direction.z == 1) { return "back"; }
         else { return "None"; };
     }

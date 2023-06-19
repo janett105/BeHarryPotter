@@ -76,12 +76,11 @@ namespace HapticsHandler
                 Debug.Log("Message arrived: " + message);
         }
 
-
-        //¹æ¾î¸· object script(Defense)
         private void OnCollisionEnter(Collision other)
         {
             SignalToSleeve(ChooseAttackDirection(other));
         }
+
 
         private void SignalToSleeve(string AttackDirection)
         {
@@ -104,9 +103,9 @@ namespace HapticsHandler
         {
             Vector3 direction = other.GetContact(0).normal;
 
-            if (direction.z == -1) { return "front"; }
-            else if (-1.5 <= direction.x && direction.x <= -0.5) { return "right"; }
-            else if (0.5 <= direction.x && direction.x <= 1.5) { return "left";}
+            if (-1.5 <= direction.x && direction.x <= -0.5) { return "right"; }
+            else if (-1.5 <= direction.z && direction.z <= -0.5) { return "front"; }
+            else if (0.5 <= direction.x && direction.x <= 1.5) { return "left"; }
             else if (direction.z == 1) { return "back"; }
             else { return "None"; };
         }

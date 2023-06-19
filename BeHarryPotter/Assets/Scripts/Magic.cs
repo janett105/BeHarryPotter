@@ -2,14 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-//[System.Serializable]
-//public class Sound
-//{
-    //public string soundName;
-    //public AudioClip clip;
-//}
-
 public class Magic : MonoBehaviour
 {
     public GameObject target;
@@ -22,11 +14,17 @@ public class Magic : MonoBehaviour
 
     public int damage = 10;
 
+    private void Run(float duration)
+    {
+        var runTime = 0.0f;
 
-    // public void Defensesound()
-    // {
-    //     audio.PlayOneShot(defensesound);
-    // }
+        while (runTime < duration)
+        {
+            runTime += Time.deltaTime;
+
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
+    }
 
     void OnCollisionEnter(Collision other)
     {
@@ -37,10 +35,11 @@ public class Magic : MonoBehaviour
         }
         else if (other.collider.gameObject.CompareTag("Player"))   
         {
-            if (gameObject.tag == "IceBall") //적 공격이 나한테 맞았을 때 -> 으악 소리 삽입
+            if (gameObject.tag == "FireBall") //적 공격이 나한테 맞았을 때 -> 으악 소리 삽입
             {
-                Destroy(gameObject);
-                
+                //Run(4f);
+                //Destroy(gameObject);
+                transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
             else if(gameObject.tag == "PlayerMagic") 
             {
@@ -49,7 +48,7 @@ public class Magic : MonoBehaviour
         }
         else if(other.collider.gameObject.CompareTag("Enemy")) 
         {
-            if (gameObject.tag == "IceBall") 
+            if (gameObject.tag == "FireBall") 
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
@@ -60,9 +59,8 @@ public class Magic : MonoBehaviour
         }
         else if (other.collider.gameObject.CompareTag("Shield")) 
         {
-            if (gameObject.tag == "IceBall")    //적 공격을 방어했을 때
+            if (gameObject.tag == "FireBall")    //적 공격을 방어했을 때
             {
-                Debug.Log("방어!!!!!!!!!!!!!");
                 Destroy(gameObject);
                 
             }
