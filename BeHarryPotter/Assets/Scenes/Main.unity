@@ -793,6 +793,10 @@ PrefabInstance:
       value: Necromancer
       objectReference: {fileID: 0}
     - target: {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -3675,6 +3679,10 @@ PrefabInstance:
     - target: {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 3}
       propertyPath: m_Name
       value: Necromancer
+      objectReference: {fileID: 0}
+    - target: {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100094, guid: 8b79114391319fb4bb56f64adb410eff, type: 3}
       propertyPath: m_TagString

@@ -63,12 +63,10 @@ public class Player : MonoBehaviour
     {
         Vector3 direction = other.GetContact(0).normal;
 
-        Debug.Log(direction);
-
-        if (0.5<=direction.x || direction.x <= 1.5) { return  "left"; }
-        else if (-1.5 <= direction.x || direction.x <= -0.5) { return "right"; }
+        if (direction.z == -1) { return "front"; }
+        else if (-1.5 <= direction.x && direction.x <= -0.5){return "right";}
+        else if (0.5<=direction.x && direction.x <= 1.5) {return  "left";}
         else if (direction.z == 1) { return "back"; }
-        else if (direction.z == -1) { return "front"; }
         else { return "None"; };
     }
 }
