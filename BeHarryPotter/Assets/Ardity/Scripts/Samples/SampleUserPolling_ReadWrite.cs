@@ -25,7 +25,7 @@ namespace HapticsHandler
 
         public void leftsignal()
         {
-            Debug.Log("나지금 left보낸다?");
+            Debug.Log("펠티어 Left ");
             serialController.SendSerialMessage("A");
 
             string message = serialController.ReadSerialMessage();
@@ -42,7 +42,7 @@ namespace HapticsHandler
         }
         public void rightsignal()
         {
-            Debug.Log("나지금 right보낸다?");
+            Debug.Log("펠티어 Right ");
             serialController.SendSerialMessage("Z");
 
             string message = serialController.ReadSerialMessage();
@@ -59,7 +59,7 @@ namespace HapticsHandler
         }
         public void frontsignal()
         {
-            Debug.Log("나지금 front보낸다?");
+            Debug.Log("펠티어 Front");
             serialController.SendSerialMessage("F");
 
             string message = serialController.ReadSerialMessage();
@@ -104,12 +104,10 @@ namespace HapticsHandler
         {
             Vector3 direction = other.GetContact(0).normal;
 
-            Debug.Log(direction);
-
-            if (0.5 <= direction.x || direction.x <= 1.5) { return "left"; }
-            else if (-1.5 <= direction.x || direction.x <= -0.5) { return "right"; }
+            if (direction.z == -1) { return "front"; }
+            else if (-1.5 <= direction.x && direction.x <= -0.5) { return "right"; }
+            else if (0.5 <= direction.x && direction.x <= 1.5) { return "left";}
             else if (direction.z == 1) { return "back"; }
-            else if (direction.z == -1) { return "front"; }
             else { return "None"; };
         }
     }
