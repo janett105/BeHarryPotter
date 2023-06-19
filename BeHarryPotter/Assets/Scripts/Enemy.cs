@@ -1,10 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using System;
 using UnityEngine;
 
-public class Enemy : LivingEntity
+public class Enemy : MonoBehaviour
 {
+    //Ω∫≈»
+    public float startingHealth = 100f;
+    public float health { get; protected set; }
+    public bool dead { get; protected set; }
+
+    public event Action onDeath;
+
+    protected virtual void OnEnable()
+    {
+        dead = false;
+        health = startingHealth;
+    }
+
+    public virtual void OnDamage(float damage)
+    {
+        health = health - damage;
+
+        if (health <= 0 && !dead)
+            Die();
+    }
+
+    public virtual void Die()
+    {
+        if (onDeath != null)
+            onDeath();
+
+        dead = true;
+    }
+
+    public void Setup(float newHealth)
+    {
+        startingHealth = newHealth;
+    }
+
     private Animator animator;
     public GameObject target;
 
@@ -14,16 +49,8 @@ public class Enemy : LivingEntity
     public float coolTime;
     private float updateTime = 0f;
 
-    //private bool isDead = false;
-
     public enum CurrentState { idle, attack, dead };
     public CurrentState curState;
-
-    public void Setup(float newHealth)
-    {
-        startingHealth = newHealth;
-        health = newHealth;
-    }
 
     private void Start()
     {
@@ -54,4 +81,24 @@ public class Enemy : LivingEntity
         
     }
 
+     void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "PlayerMagic")
+        {
+            health = health - 10f;
+            StartCoroutine(OnDamaged());
+        }
+    }
+
+    IEnumerator OnDamaged()
+    {
+        if (health > 0)
+        {
+            yield return null;
+        }
+        else
+        {
+            animator.SetTrigger("Dead");
+        }
+    }
 }

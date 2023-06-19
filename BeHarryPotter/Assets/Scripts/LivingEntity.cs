@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-//생명체로 동작할 게임 오브젝트들의 뼈대를 제공
-//체력, 피해받음, 사망 기능, 사망 이벤트 제공
 public class LivingEntity : MonoBehaviour//, IDamageable 적용 예정
 {
     public float startingHealth = 100f; //시작 체력
