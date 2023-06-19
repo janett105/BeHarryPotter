@@ -16,13 +16,7 @@ public class WitActivation : MonoBehaviour
 
         if (OVRInput.Get(OVRInput.RawButton.A))    //2. A button ´©¸£¸é 
         {
-
             wit.Activate();
         }
-        //else if (OVRInput.GetUp(OVRInput.Button.One))    //2. A button ¶¼¸é
-        //{
-        //    Debug.Log("button, end");
-        //    //wit.Deactivate();
-        //}
     }
 }
