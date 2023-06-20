@@ -1,4 +1,4 @@
-//player collider ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+//player collider ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(ï¿½ï¿½ï¿?ï¿½ï¿½ï¿½ï¿½)
 //Bhaptics signal 
 using Oculus.Interaction;
 using System.Collections;
@@ -13,7 +13,7 @@ using UnityEngine.Timeline;
 public class Player : LivingEntity
 {
 
-    public AudioClip[] soundEffects;  // ï¿½Ù¸ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
+    public AudioClip[] soundEffects;
 
     private AudioSource audioSource;
 
@@ -26,12 +26,13 @@ public class Player : LivingEntity
     {
         SignalToBhaptics(ChooseAttackDirection(other)); //Bhaptics signal
         audioSource.Play();
+        
     }
 
     private void SignalToBhaptics(string AttackDirection)
     {
         var at = new BHapticsHandler();
-
+        
         if (AttackDirection == "right")
         {
             at.Attacked_Bhaptics(BHapticsHandler.attackedDirection.Right);
@@ -53,8 +54,6 @@ public class Player : LivingEntity
     private string ChooseAttackDirection(Collision other)
     {
         Vector3 direction = other.GetContact(0).normal;
-
-        Debug.Log(direction);
 
         //¿À: -0.67, 0, -0.74
         //¿Þ: 0.36, 0, -0.93

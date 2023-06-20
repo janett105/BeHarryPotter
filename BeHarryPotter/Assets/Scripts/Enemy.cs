@@ -14,6 +14,7 @@ public class Enemy : LivingEntity
     public GameObject magicPrefab;
     public Transform magicPos;
 
+
     public float coolTime;
     public float updateTime;
 
@@ -32,7 +33,11 @@ public class Enemy : LivingEntity
         if (updateTime > coolTime)
         {
             updateTime = 0.0f;
-            StartCoroutine(magicAttack());
+            if(health > 0)
+            {
+                StartCoroutine(magicAttack());
+            }
+            
         }
         else
         {
@@ -76,6 +81,7 @@ public class Enemy : LivingEntity
         else
         {
             animator.SetTrigger("Dead");
+            animator.SetBool("CanAttack", false);
         }
     }
 
