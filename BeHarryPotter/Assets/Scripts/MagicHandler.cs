@@ -44,7 +44,7 @@ public class MagicHandler : MonoBehaviour
         OVRInput.SetControllerVibration(1f, 2f, OVRInput.Controller.RHand);
         GameObject magic = Instantiate(icePrefab, magicPos.transform.position, magicPos.transform.rotation);
         Debug.Log("얼음 공격");
-        playsoundeffect(0);
+        playsoundeffect(1);
     }
     void Defense()
     {

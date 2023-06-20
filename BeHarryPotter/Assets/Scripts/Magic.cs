@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Magic : MonoBehaviour
@@ -67,12 +68,19 @@ public class Magic : MonoBehaviour
             {
                 Debug.Log("방어성공");
                 Destroy(gameObject);
-                
             }
             else if (gameObject.tag == "PlayerMagic") 
             {
                 transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
+        }
+        else if (other.collider.gameObject.CompareTag("FireBall") && gameObject.tag == "PlayerMagic")   //공격끼리 충돌 시 둘 다 destroy
+        {
+             Destroy(gameObject);
+        }
+        else if (other.collider.gameObject.CompareTag("PlayerMagic") && gameObject.tag == "FireBall")
+        {
+            Destroy(gameObject);
         }
     }
 }

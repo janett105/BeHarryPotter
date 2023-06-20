@@ -29,7 +29,9 @@ namespace HapticsHandler
                     Debug.Log("∫Ò«›∆ΩΩ∫ Front");
                 }
                 else if (direction == attackedDirection.Back) {
-                    BhapticsLibrary.Play("attacked_back"); }
+                    BhapticsLibrary.Play("attacked_back");
+                    Debug.Log("∫Ò«›∆ΩΩ∫ Back");
+                }
             }
         }
     }
