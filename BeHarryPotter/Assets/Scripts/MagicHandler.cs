@@ -11,16 +11,25 @@ public class MagicHandler : MonoBehaviour
     public GameObject defensePrefab;
     public Transform magicPos;
 
-    AudioSource audioSource;
-    public AudioClip defensespell;
-    public AudioClip attackspell;
+    public AudioClip[] audiosource;
+    public AudioSource audioSource;
+    //public AudioClip attackspell;
 
-    //private void Start()
-    //{
-    //    defensespell = GetComponent<AudioSource>();
-    //}
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = true;
+    }
 
-    //private float speed = 5f;
+    public void playsoundeffect(int index)
+    {
+        if(index >= 0 && index < audiosource.Length)
+        {
+            audioSource.clip = audiosource[index];
+            audioSource.Play();
+        }
+    }
+
 
     public void MagicCheck(string[] values)    //values : Wit에서 음성 인식 성공 시, intent 값 받아옴
     {
@@ -35,17 +44,14 @@ public class MagicHandler : MonoBehaviour
         OVRInput.SetControllerVibration(1f, 2f, OVRInput.Controller.RHand);
         GameObject magic = Instantiate(icePrefab, magicPos.transform.position, magicPos.transform.rotation);
         Debug.Log("얼음 공격");
-        audioSource.clip = attackspell;
-        audioSource.Play();
+        playsoundeffect(0);
     }
     void Defense()
     {
         OVRInput.SetControllerVibration(1f, 2f, OVRInput.Controller.RHand);
         GameObject magic = Instantiate(defensePrefab, new Vector3(0.74f, 8f, 7.7f), Quaternion.Euler(new Vector3(90,0,0)));
         Debug.Log("방어막 생성");
-        audioSource.clip= defensespell; 
-        audioSource.Play(); 
-        //defensespell.Play();
+        playsoundeffect(0); 
         Destroy(magic, 5f);
     }
 }

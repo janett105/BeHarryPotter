@@ -4137,7 +4137,7 @@ Transform:
   m_Children:
   - {fileID: 1706639941}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &982590062
 MonoBehaviour:
@@ -6415,37 +6415,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e1489ba25dfb7ab4585967216604488d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98ea3f81640ee854ca16574a1b280d2c, type: 3}
---- !u!1 &1632147920
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1632147921}
-  m_Layer: 0
-  m_Name: Test
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1632147921
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632147920}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.798746, y: -8.857235, z: -83.54973}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1635012183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8458,8 +8427,10 @@ MonoBehaviour:
   icePrefab: {fileID: 4597139997174728396, guid: a34b505ac30210941878fe0186ca3619, type: 3}
   defensePrefab: {fileID: 5377348284424047420, guid: 928fecafc6286804f9858e2abc7111eb, type: 3}
   magicPos: {fileID: 2090117916}
-  defensespell: {fileID: 8300000, guid: fbd0b07807157f046ba0906700e10b79, type: 3}
-  attackspell: {fileID: 8300000, guid: a3b73c575b20814499362c84ea106f85, type: 3}
+  audiosource:
+  - {fileID: 8300000, guid: fbd0b07807157f046ba0906700e10b79, type: 3}
+  - {fileID: 8300000, guid: a3b73c575b20814499362c84ea106f85, type: 3}
+  audioSource: {fileID: 0}
 --- !u!4 &2077877130 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67be24e8ee52ec04497cfee5403c5fa3, type: 3}

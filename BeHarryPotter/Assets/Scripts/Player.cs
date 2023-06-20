@@ -12,7 +12,6 @@ using UnityEngine.Timeline;
 
 public class Player : MonoBehaviour
 {
-    //public AudioClip[] soundEffects;  // 다른 효과음을 담을 배열
 
     private AudioSource audioSource;
 
@@ -20,16 +19,6 @@ public class Player : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
-
-    // 플레이어의 행동에 따라 다른 효과음을 재생하는 함수
-    //public void PlaySoundEffect(int index)
-    //{
-    //    if (index >= 0 && index < soundEffects.Length)
-    //    {
-    //        audioSource.clip = soundEffects[index];
-    //        audioSource.Play();
-    //    }
-    //}
 
     private void OnCollisionEnter(Collision other)
     {

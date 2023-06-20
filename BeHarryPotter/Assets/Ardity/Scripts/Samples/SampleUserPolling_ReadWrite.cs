@@ -17,12 +17,10 @@ namespace HapticsHandler
     public class SampleUserPolling_ReadWrite : MonoBehaviour
     {
         public SerialController serialController;
-        //public AudioSource hit;
 
         void Start()
         {
             serialController = GameObject.Find("SerialController").GetComponent<SerialController>();
-            //hit = GetComponent<AudioSource>();
         }
 
         public void leftsignal()
@@ -81,7 +79,6 @@ namespace HapticsHandler
         private void OnTriggerEnter(Collider other)
         {
             SignalToSleeve(ChooseAttackDirection(other.transform.name));
-            //hit.Play();
         }
 
 
