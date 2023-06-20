@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerHPBar : MonoBehaviour
+public class Cooltime : MonoBehaviour
 {
+    public GameObject[] text;
+    public Text coolTimeText;
+    private float cooltime = 5;
+    private float currentTime;
+    private float startTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +20,6 @@ public class PlayerHPBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
+
 }

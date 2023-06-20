@@ -10,8 +10,9 @@ using UnityEngine.Timeline;
 
 
 
-public class Player : MonoBehaviour
+public class Player : LivingEntity
 {
+
     public AudioClip[] soundEffects;  // 다른 효과음을 담을 배열
 
     private AudioSource audioSource;
