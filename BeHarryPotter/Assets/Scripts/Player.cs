@@ -7,8 +7,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using HapticsHandler;
 using UnityEngine.Timeline;
-
-
+using UnityEditor.UI;
 
 public class Player : LivingEntity
 {
@@ -62,7 +61,13 @@ public class Player : LivingEntity
         if (direction.x == 0) { return "front"; }
         else if (direction.x < -0.3) { return "right"; }
         else if (direction.x > 0.3) { return "left"; }
-        else if (direction.z == 1) {return "back"; }
+        else if (direction.z == 1) { return "back"; }
         else { return "None"; };
+
+        //if (LclD.x<=0 && LclD.y<=0 && LclD.z >= 0) { return "right"; }
+        //else if (LclD.x >= 0 && LclD.y <= 0 && LclD.z >= 0) { return "front"; }
+        //else if (LclD.x <= 0 && LclD.y <= 0 && LclD.z <= 0) { return "left"; }
+        //else if (LclD.x >= 0 && LclD.y <= 0 && LclD.z <= 0) { return "back"; }
+        //else { return "None"; }
     }
 }

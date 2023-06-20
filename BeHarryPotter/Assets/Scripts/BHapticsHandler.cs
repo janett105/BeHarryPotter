@@ -16,7 +16,6 @@ namespace HapticsHandler
 
             if (BhapticsLibrary.IsBhapticsAvailable(isAutoRunPlayer))
             {
-                Debug.Log("»«æ∆");
                 if (direction == attackedDirection.Left) {
                     BhapticsLibrary.Play("attacked_left");
                     Debug.Log("∫Ò«›∆ΩΩ∫ Left");
