@@ -10,7 +10,7 @@ using UnityEngine.Timeline;
 
 
 
-public class Player : MonoBehaviour
+public class Player : LivingEntity
 {
 
     private AudioSource audioSource;

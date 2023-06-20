@@ -5,37 +5,9 @@ using System;
 using UnityEngine;
 using Unity.VisualScripting;
 
-public class Enemy : MonoBehaviour
+public class Enemy : LivingEntity
 {
-    //Ω∫≈»
-    public float startingHealth = 100f;
-    public float health { get; protected set; }
-    public bool dead { get; protected set; }
-
-    public event Action onDeath;
-
-    protected virtual void OnEnable()
-    {
-        dead = false;
-        health = startingHealth;
-    }
-
-    public virtual void OnDamage(float damage)
-    {
-        health = health - damage;
-
-        if (health <= 0 && !dead)
-            Die();
-    }
-
-    public virtual void Die()
-    {
-        if (onDeath != null)
-            onDeath();
-
-        dead = true;
-    }
-
+    
     public void Setup(float newHealth)
     {
         startingHealth = newHealth;

@@ -7,7 +7,6 @@ public class LivingEntity : MonoBehaviour//, IDamageable 적용 예정
 {
     public float startingHealth = 100f; //시작 체력
     public float health { get; protected set; } //현재 체력
-    public float mana { get; protected set; } //현재 마나
     public bool dead { get; protected set; } //사망 상태
 
     public event Action onDeath; //사망 시 발동할 이벤트
