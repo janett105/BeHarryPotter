@@ -4,34 +4,19 @@ using UnityEngine;
 
 public class defense : MonoBehaviour
 {
-    private AudioSource audiosource;
-    public AudioClip[] soundeffects;
-    private void awake()
+    private AudioSource shieldmaker;
+
+    private void Start()
     {
-        audiosource = GetComponent<AudioSource>();
+        shieldmaker = GetComponent<AudioSource>();
     }
 
-
-    public void playsoundeffect(int index)
+    private void OnCollisionEnter(Collision other)
     {
-        if (index >= 0 && index < soundeffects.Length)
-        {
-            audiosource.clip = soundeffects[index];
-            audiosource.Play();
-        }
-    }
-
-
-    private void OnCollisionEnter(Collision other)  
-    {
-        if (other.collider.gameObject.CompareTag("IceBall"))   //적 공격 방어 성공 시 
+        if (other.collider.gameObject.CompareTag("FireBall"))   //적 공격 방어 성공 시 
         {
             //방어 성공 소리
-            playsoundeffect(1);
-        }
-        else if (other.collider.gameObject.CompareTag("Shield"))
-        {
-            playsoundeffect(0);
+            shieldmaker.Play();
         }
 
     }

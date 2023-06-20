@@ -42,14 +42,15 @@ public class Enemy : LivingEntity
     {
         animator.SetBool("CanAttack", true);
         GameObject magic = Instantiate(magicPrefab, magicPos.transform.position, magicPos.transform.rotation);
+        magic.name = this.transform.parent.name;
 
         yield return new WaitForSeconds(0.5f);
 
         animator.SetBool("CanAttack", false);
-        
+
     }
 
-     void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "PlayerMagic")
         {

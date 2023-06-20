@@ -17,12 +17,10 @@ namespace HapticsHandler
     public class SampleUserPolling_ReadWrite : MonoBehaviour
     {
         public SerialController serialController;
-        public AudioSource hit;
 
         void Start()
         {
             serialController = GameObject.Find("SerialController").GetComponent<SerialController>();
-            hit = GetComponent<AudioSource>();
         }
 
         public void leftsignal()
@@ -44,7 +42,7 @@ namespace HapticsHandler
         }
         public void rightsignal()
         {
-            Debug.Log("ÆçÆ¼¾î Right ");
+            Debug.Log("ÆçÆ¼¾î Right");
             serialController.SendSerialMessage("Z");
 
             string message = serialController.ReadSerialMessage();
@@ -78,10 +76,9 @@ namespace HapticsHandler
                 Debug.Log("Message arrived: " + message);
         }
 
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
-            SignalToSleeve(ChooseAttackDirection(other));
-            hit.Play();
+            SignalToSleeve(ChooseAttackDirection(other.transform.name));
         }
 
 
@@ -102,15 +99,12 @@ namespace HapticsHandler
 
         }
 
-        private string ChooseAttackDirection(Collision other)
+        private string ChooseAttackDirection(string enemyName)
         {
-            Vector3 direction = other.GetContact(0).normal;
-
-            if (-1.5 <= direction.x && direction.x <= -0.5) { return "right"; }
-            else if (-1.5 <= direction.z && direction.z <= -0.5) { return "front"; }
-            else if (0.5 <= direction.x && direction.x <= 1.5) { return "left"; }
-            else if (direction.z == 1) { return "back"; }
-            else { return "None"; };
+            if (enemyName == "EnemyFront") { return "front"; }
+            else if (enemyName == "EnemyLeft") { return "left"; }
+            else if (enemyName == "EnemyRight") { return "right"; }
+            else { return "None"; }
         }
     }
 }

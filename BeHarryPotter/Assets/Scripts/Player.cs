@@ -1,4 +1,4 @@
-//player collider Ãæµ¹ °¨Áö ÈÄ(¹æ¾î ½ÇÆÐ)
+//player collider ï¿½æµ¹ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 //Bhaptics signal 
 using Oculus.Interaction;
 using System.Collections;
@@ -13,28 +13,19 @@ using UnityEngine.Timeline;
 public class Player : LivingEntity
 {
 
-    public AudioClip[] soundEffects;  // ´Ù¸¥ È¿°úÀ½À» ´ãÀ» ¹è¿­
+    public AudioClip[] soundEffects;  // ï¿½Ù¸ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
 
     private AudioSource audioSource;
 
-    private void Awake()
+    private void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    // ÇÃ·¹ÀÌ¾îÀÇ Çàµ¿¿¡ µû¶ó ´Ù¸¥ È¿°úÀ½À» Àç»ýÇÏ´Â ÇÔ¼ö
-    public void PlaySoundEffect(int index)
-    {
-        if (index >= 0 && index < soundEffects.Length)
-        {
-            audioSource.clip = soundEffects[index];
-            audioSource.Play();
-        }
-    }
-
-    private void OnCollisionEnter(Collision other)    //collisor ¹üÀ§ ¾È¿¡ ´êÀ» ½Ã, °ø°ÝÃ¼µµ Collider component ÇÊ¼ö
+    private void OnCollisionEnter(Collision other)
     {
         SignalToBhaptics(ChooseAttackDirection(other)); //Bhaptics signal
+        audioSource.Play();
     }
 
     private void SignalToBhaptics(string AttackDirection)
@@ -62,10 +53,11 @@ public class Player : LivingEntity
     private string ChooseAttackDirection(Collision other)
     {
         Vector3 direction = other.GetContact(0).normal;
+        Debug.Log(direction);
 
-        if (-1.5 <= direction.x && direction.x <= -0.5) { return "right"; }
-        else if (-1.5 <= direction.z && direction.z <= -0.5) { return "front"; }
-        else if (0.5 <= direction.x && direction.x <= 1.5) { return "left"; }
+        if (direction.x == 0) { return "front"; }
+        else if (direction.x < 0) { return "right"; }
+        else if (direction.x > 0) { return "left"; }
         else if (direction.z == 1) { return "back"; }
         else { return "None"; };
     }

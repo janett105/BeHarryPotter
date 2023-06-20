@@ -1,4 +1,4 @@
-//À½¼ºÀÎ½Ä  ÀÏÄ¡ ½Ã ¸¶¹ý activate
+//ï¿½ï¿½ï¿½ï¿½ï¿½Î½ï¿½  ï¿½ï¿½Ä¡ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ activate
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +11,31 @@ public class MagicHandler : MonoBehaviour
     public GameObject defensePrefab;
     public Transform magicPos;
 
-    //private float speed = 5f;
+    public AudioClip[] audiosource;
+    public AudioSource audioSource;
+    //public AudioClip attackspell;
 
-    public void MagicCheck(string[] values)    //values : Wit¿¡¼­ À½¼º ÀÎ½Ä ¼º°ø ½Ã, intent °ª ¹Þ¾Æ¿È
+    private void Start()
     {
-        //¸¶¹ý : Incendio
+        audioSource = GetComponent<AudioSource>();
+        audioSource.playOnAwake = true;
+    }
+
+    public void playsoundeffect(int index)
+    {
+        if(index >= 0 && index < audiosource.Length)
+        {
+            audioSource.clip = audiosource[index];
+            audioSource.Play();
+        }
+    }
+
+
+    public void MagicCheck(string[] values)    //values : Witï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, intent ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½
+    {
+        //ï¿½ï¿½ï¿½ï¿½ : Incendio
         if (values[0] == "flame") { Flame(); };
-        //¸¶¹ý : Protego
+        //ï¿½ï¿½ï¿½ï¿½ : Protego
         if (values[0] == "defense") { Defense(); };
     }
     
@@ -25,7 +43,8 @@ public class MagicHandler : MonoBehaviour
     {
         OVRInput.SetControllerVibration(1f, 2f, OVRInput.Controller.RHand);
         GameObject magic = Instantiate(icePrefab, magicPos.transform.position, magicPos.transform.rotation);
-        Debug.Log("This is flame");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+        playsoundeffect(0);
     }
     void Defense()
     {

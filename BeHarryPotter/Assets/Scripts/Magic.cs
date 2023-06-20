@@ -6,40 +6,44 @@ public class Magic : MonoBehaviour
 {
     public GameObject target;
     private Rigidbody magicRigid;
-    //public AudioSource audio;
-    //public AudioClip defensesound;
+
 
     public float speed;
     public float rate = 3;
 
     public int damage = 10;
 
-    private void Run(float duration)
+    void Start()
     {
-        var runTime = 0.0f;
-
-        while (runTime < duration)
+        magicRigid = GetComponent<Rigidbody>();
+        if (target == null)
         {
-            runTime += Time.deltaTime;
-
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            GameObject tmp = GameObject.FindGameObjectWithTag("Player");
+            target = tmp;
         }
+    }
+
+    void Update()
+    {
+        if (target == null)
+        {
+            GameObject tmp = GameObject.FindGameObjectWithTag("Player");
+            target = tmp;
+        }
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     void OnCollisionEnter(Collision other)
     {
         if(other.collider.gameObject.CompareTag("Plane"))   //plane에 닿았을 때
         {
-            Debug.Log("Plane이야");
             Destroy(gameObject, 1f);       
         }
         else if (other.collider.gameObject.CompareTag("Player"))   
         {
             if (gameObject.tag == "FireBall") //적 공격이 나한테 맞았을 때 -> 으악 소리 삽입
             {
-                //Run(4f);
-                //Destroy(gameObject);
-                transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                Destroy(gameObject);
             }
             else if(gameObject.tag == "PlayerMagic") 
             {
@@ -61,6 +65,7 @@ public class Magic : MonoBehaviour
         {
             if (gameObject.tag == "FireBall")    //적 공격을 방어했을 때
             {
+                Debug.Log("방어성공");
                 Destroy(gameObject);
                 
             }
@@ -70,29 +75,4 @@ public class Magic : MonoBehaviour
             }
         }
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        magicRigid = GetComponent<Rigidbody>();
-        if (target == null)
-        {
-            GameObject tmp = GameObject.FindGameObjectWithTag("Player");
-            target = tmp;
-        }
-    }
- 
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (target == null)
-        {
-            GameObject tmp = GameObject.FindGameObjectWithTag("Player");
-            target = tmp;
-        }
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
-
-    
 }
