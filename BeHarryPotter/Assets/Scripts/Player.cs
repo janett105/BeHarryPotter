@@ -53,12 +53,17 @@ public class Player : LivingEntity
     private string ChooseAttackDirection(Collision other)
     {
         Vector3 direction = other.GetContact(0).normal;
+
         Debug.Log(direction);
 
+        //¿À: -0.67, 0, -0.74
+        //¿Þ: 0.36, 0, -0.93
+        //¾Õ: 0,0,-1
+
         if (direction.x == 0) { return "front"; }
-        else if (direction.x < 0) { return "right"; }
-        else if (direction.x > 0) { return "left"; }
-        else if (direction.z == 1) { return "back"; }
+        else if (direction.x < -0.3) { return "right"; }
+        else if (direction.x > 0.3) { return "left"; }
+        else if (direction.z == 1) {return "back"; }
         else { return "None"; };
     }
 }
