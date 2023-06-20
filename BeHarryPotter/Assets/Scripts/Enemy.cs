@@ -55,12 +55,11 @@ public class Enemy : LivingEntity
         animator.SetBool("CanAttack", false);
 
     }
-
     void OnCollisionEnter(Collision other)
     {
         if (other.collider.gameObject.CompareTag("PlayerMagic"))
         {
-            health = health - 50f;
+            health = health - 25f;
 
             StartCoroutine(OnDamage());
         }
