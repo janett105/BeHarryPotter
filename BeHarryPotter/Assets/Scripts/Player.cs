@@ -12,28 +12,29 @@ using UnityEngine.Timeline;
 
 public class Player : MonoBehaviour
 {
-    public AudioClip[] soundEffects;  // 다른 효과음을 담을 배열
+    //public AudioClip[] soundEffects;  // 다른 효과음을 담을 배열
 
     private AudioSource audioSource;
 
-    private void Awake()
+    private void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
     // 플레이어의 행동에 따라 다른 효과음을 재생하는 함수
-    public void PlaySoundEffect(int index)
-    {
-        if (index >= 0 && index < soundEffects.Length)
-        {
-            audioSource.clip = soundEffects[index];
-            audioSource.Play();
-        }
-    }
+    //public void PlaySoundEffect(int index)
+    //{
+    //    if (index >= 0 && index < soundEffects.Length)
+    //    {
+    //        audioSource.clip = soundEffects[index];
+    //        audioSource.Play();
+    //    }
+    //}
 
-    private void OnCollisionEnter(Collision other)    //collisor 범위 안에 닿을 시, 공격체도 Collider component 필수
+    private void OnCollisionEnter(Collision other)
     {
         SignalToBhaptics(ChooseAttackDirection(other)); //Bhaptics signal
+        audioSource.Play();
     }
 
     private void SignalToBhaptics(string AttackDirection)
@@ -62,9 +63,9 @@ public class Player : MonoBehaviour
     {
         Vector3 direction = other.GetContact(0).normal;
 
-        if (-1.5 <= direction.x && direction.x <= -0.5) { return "right"; }
-        else if (-1.5 <= direction.z && direction.z <= -0.5) { return "front"; }
-        else if (0.5 <= direction.x && direction.x <= 1.5) { return "left"; }
+        if (direction.x==0) { return "front"; }
+        else if (direction.x<0) { return "right"; }   
+        else if (direction.x>0) { return "left"; }
         else if (direction.z == 1) { return "back"; }
         else { return "None"; };
     }

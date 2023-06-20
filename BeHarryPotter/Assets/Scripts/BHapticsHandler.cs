@@ -18,15 +18,15 @@ namespace HapticsHandler
             {
                 if (direction == attackedDirection.Left) {
                     BhapticsLibrary.Play("attacked_left");
-                    Debug.Log("∫Ò«›∆ΩΩ∫ øﬁ¬ ");
+                    Debug.Log("∫Ò«›∆ΩΩ∫ Left");
                 }
                 else if (direction == attackedDirection.Right) {
                     BhapticsLibrary.Play("attacked_right");
-                    Debug.Log("∫Ò«›∆ΩΩ∫ ø¿∏•¬ ");
+                    Debug.Log("∫Ò«›∆ΩΩ∫ Right");
                 }
                 else if (direction == attackedDirection.Front) {
                     BhapticsLibrary.Play("attacked_front");
-                    Debug.Log("∫Ò«›∆ΩΩ∫ æ’¬ ");
+                    Debug.Log("∫Ò«›∆ΩΩ∫ Front");
                 }
                 else if (direction == attackedDirection.Back) {
                     BhapticsLibrary.Play("attacked_back"); }

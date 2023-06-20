@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System;
 using UnityEngine;
+using Unity.VisualScripting;
 
 public class Enemy : MonoBehaviour
 {
@@ -74,14 +75,15 @@ public class Enemy : MonoBehaviour
     {
         animator.SetBool("CanAttack", true);
         GameObject magic = Instantiate(magicPrefab, magicPos.transform.position, magicPos.transform.rotation);
+        magic.name = this.transform.parent.name;
 
         yield return new WaitForSeconds(2f);
 
         animator.SetBool("CanAttack", false);
-        
+
     }
 
-     void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag == "PlayerMagic")
         {
