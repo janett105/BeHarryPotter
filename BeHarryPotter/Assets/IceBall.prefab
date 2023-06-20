@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4582569265093066374}
   - component: {fileID: 6284740326517014230}
   - component: {fileID: 7184361373780121363}
-  - component: {fileID: -3298881515497365348}
+  - component: {fileID: 2613200467326033055}
   m_Layer: 0
   m_Name: IceBall
-  m_TagString: IceBall
+  m_TagString: PlayerMagic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4597139997174728396}
-  m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.0000001872535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4589532069554951966
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -99,12 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1908087415854957721, guid: 2d455b422dae9f34793a0529407faf32, type: 3}
-  audio: {fileID: 0}
-  defensesound: {fileID: 0}
-  speed: 20
+  speed: 11
   rate: 3
   damage: 10
-  soundEffects: []
 --- !u!135 &7184361373780121363
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -118,7 +115,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-3298881515497365348
+--- !u!54 &2613200467326033055
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

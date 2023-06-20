@@ -15,7 +15,7 @@ public class Enemy : LivingEntity
     public Transform magicPos;
 
     public float coolTime;
-    private float updateTime = 0f;
+    public float updateTime;
 
     public enum CurrentState { idle, attack, dead };
     public CurrentState curState;

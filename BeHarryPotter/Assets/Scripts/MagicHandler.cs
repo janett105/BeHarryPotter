@@ -7,12 +7,11 @@ using UnityEditor;
 
 public class MagicHandler : MonoBehaviour
 {
-    public GameObject firePrefab;
     public GameObject icePrefab;
     public GameObject defensePrefab;
     public Transform magicPos;
 
-    private float speed = 5f;
+    //private float speed = 5f;
 
     public void MagicCheck(string[] values)    //values : Wit에서 음성 인식 성공 시, intent 값 받아옴
     {
@@ -25,7 +24,7 @@ public class MagicHandler : MonoBehaviour
     void Flame()
     {
         OVRInput.SetControllerVibration(1f, 2f, OVRInput.Controller.RHand);
-        GameObject magic = Instantiate(firePrefab, magicPos.transform.position, magicPos.transform.rotation);
+        GameObject magic = Instantiate(icePrefab, magicPos.transform.position, magicPos.transform.rotation);
         Debug.Log("This is flame");
     }
     void Defense()

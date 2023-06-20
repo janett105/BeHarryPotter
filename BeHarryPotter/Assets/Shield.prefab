@@ -19671,14 +19671,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5377348284424047420}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 7
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -19746,7 +19746,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -24525,3 +24525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daefccdd2e38ad74e843efe07c575d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundeffects:
+  - {fileID: 8300000, guid: fbd0b07807157f046ba0906700e10b79, type: 3}
+  - {fileID: 8300000, guid: c02a8b525a5429840a6fe020a2609a5d, type: 3}
