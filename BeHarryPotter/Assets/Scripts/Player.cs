@@ -51,10 +51,11 @@ public class Player : LivingEntity
     private string ChooseAttackDirection(Collision other)
     {
         Vector3 direction = other.GetContact(0).normal;
+        Debug.Log(direction);
 
-        if (direction.x==0) { return "front"; }
-        else if (direction.x<0) { return "right"; }   
-        else if (direction.x>0) { return "left"; }
+        if (direction.x == 0) { return "front"; }
+        else if (direction.x < 0) { return "right"; }
+        else if (direction.x > 0) { return "left"; }
         else if (direction.z == 1) { return "back"; }
         else { return "None"; };
     }
