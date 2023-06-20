@@ -7,11 +7,8 @@ public class Magic : MonoBehaviour
     public GameObject target;
     private Rigidbody magicRigid;
 
-
     public float speed;
     public float rate = 3;
-
-    public int damage = 10;
 
     void Start()
     {

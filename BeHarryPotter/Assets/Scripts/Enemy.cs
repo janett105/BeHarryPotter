@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class Enemy : LivingEntity
 {
-
     private Animator animator;
     public GameObject target;
+    private Material necroMtr;
 
     public GameObject magicPrefab;
     public Transform magicPos;
@@ -23,6 +23,8 @@ public class Enemy : LivingEntity
     private void Start()
     {
         animator = this.gameObject.GetComponent<Animator>();
+        necroMtr = transform.Find("necromancer").gameObject.GetComponent<SkinnedMeshRenderer>().materials[0];
+
     }
 
     void Update()
@@ -37,7 +39,6 @@ public class Enemy : LivingEntity
             updateTime += Time.deltaTime;
         }
     }
-
     IEnumerator magicAttack()
     {
         animator.SetBool("CanAttack", true);
@@ -50,24 +51,32 @@ public class Enemy : LivingEntity
 
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.tag == "PlayerMagic")
+        if (other.collider.gameObject.CompareTag("PlayerMagic"))
         {
-            health = health - 10f;
-            StartCoroutine(OnDamaged());
+            health = health - 50f;
+
+            StartCoroutine(OnDamage());
         }
     }
 
-    IEnumerator OnDamaged()
+    IEnumerator OnDamage()
     {
-        if (health > 0)
+        if (health > 0) 
         {
-            yield return null;
+            animator.SetTrigger("Hit");
+            necroMtr.color = new Color(203 / 255f, 87 / 255f, 87 / 255f, 255 / 255f);
+
+            yield return new WaitForSeconds(1f);
+
+            necroMtr.color = Color.white;
         }
+
         else
         {
             animator.SetTrigger("Dead");
         }
     }
+
 }
