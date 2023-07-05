@@ -1,4 +1,4 @@
-# Voice Command(박지후)
+# Voice Command
 Oculus voice SDK with Wit.ai
 
 Wit.ai 
@@ -25,7 +25,7 @@ https://www.youtube.com/watch?v=SJ96P-ZhBoc&themeRefresh=1
 
 ![image](https://github.com/ImmersiveContentsTeam1/BeHarryPotter/assets/81574359/ea1daac2-dd64-427c-a56d-8d866db5094e)
 
-# Bhaptics(박지후)
+# Bhaptics
 Tactsuit X40
 
 Bhaptics developer portal
@@ -43,13 +43,13 @@ https://github.com/bhaptics/haptic-guide
 use z-suite software
 https://www.thingiverse.com/thing:1069671
 
-# Thermal Haptics - Arm Sleeve(채윤지) 
+# Thermal Haptics - Arm Sleeve 
 ardunity
 arduino and l298n with peltier
 make peltier hot and cold when user didn't defend attack
 https://deneb21.tistory.com/281
 
-# BeHarryPotter Game (Unity3D) (이은화)
+# BeHarryPotter Game (Unity3D)
 with Oculus Quest 2
 
 VR로 마법 전투 게임을 구현하였다. 
