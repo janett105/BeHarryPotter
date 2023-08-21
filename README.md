@@ -1,7 +1,15 @@
-# Voice Command
-Oculus voice SDK with Wit.ai
+# Become A Wizard
+다양한 하드웨어를 사용해 실감있는 마법 공격/방어 구현
+현재 일정 수준 이상의 시청각 경험 제공되어 있는 반면에 그 이외의 경험 제공은 미비하다는 한계 존재
 
-Wit.ai 
+## Experience
+1. Voice Interaction : 음성으로 마법주문을 외쳐서 적을 공격/방어 with wit.ai 
+2. Temperature : 적의 불 공격을 맞았을 때 목에 뜨거움 with peltier
+3. Vibration : 적의 공격을 맞았을 때 느끼는 몸의 진동 with Bhaptics
+4. Resistance : 지팡이를 휘두를 때 느끼는 바람저항 with 3D printer
+   
+## Voice Interaction
+Oculus voice SDK with Wit.ai
 https://wit.ai/apps/184718221171935/understanding
 
 ### 구현 기능
@@ -25,7 +33,7 @@ https://www.youtube.com/watch?v=SJ96P-ZhBoc&themeRefresh=1
 
 ![image](https://github.com/ImmersiveContentsTeam1/BeHarryPotter/assets/81574359/ea1daac2-dd64-427c-a56d-8d866db5094e)
 
-# Bhaptics
+## Bhaptics
 Tactsuit X40
 
 Bhaptics developer portal
@@ -38,18 +46,18 @@ https://bhaptics.notion.site/Plug-in-deployed-events-to-Unity-33cc33dcfa44426899
 
 https://github.com/bhaptics/haptic-guide
 
-# Magic Wand 3D printing
+## Magic Wand 3D printing
 3D printing model
 use z-suite software
 https://www.thingiverse.com/thing:1069671
 
-# Thermal Haptics - Arm Sleeve 
+## Thermal Haptics - Arm Sleeve 
 ardunity
 arduino and l298n with peltier
 make peltier hot and cold when user didn't defend attack
 https://deneb21.tistory.com/281
 
-# BeHarryPotter Game (Unity3D)
+## BeHarryPotter Game (Unity3D)
 with Oculus Quest 2
 
 VR로 마법 전투 게임을 구현하였다. 
@@ -65,7 +73,7 @@ VR로 마법 전투 게임을 구현하였다.
 2. **Magic Attack.cs** : 
 
 
-## 오류
+#### 오류
 1. warning: LF will be replaced by CRLF in bora.txt. The file will have its original line endings in your working directory
 ```
 git config --global core.autocrlf true
